@@ -3,6 +3,7 @@ import { useState } from "react";
 import Input from "../input/input";
 import { useRouter } from "next/navigation";
 import registerValidation from "../../helpers/validate";
+import { FormErrors } from "@/interfaces/errors";
 
 export const Register = () => {
     const router = useRouter();

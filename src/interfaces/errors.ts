@@ -1,4 +1,4 @@
-interface FormErrors {
+export interface FormErrors {
   name?: string;
   email?: string;
   Dni?: string;

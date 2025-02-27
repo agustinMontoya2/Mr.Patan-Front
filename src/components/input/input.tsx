@@ -2,6 +2,7 @@
 // components/Input.tsx
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react"; // O usa react-icons
+import { InputProps } from "@/interfaces/input";
 
 
 const Input: React.FC<InputProps> = ({
