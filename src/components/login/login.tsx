@@ -20,11 +20,6 @@ export const Login: React.FC = () => {
     }
     
 
-    const [seePassword, setSeePassword] = useState(false);
-    const handleSeePassword = () => {
-        setSeePassword(!seePassword);
-    }
-
     const inputs = [
         { name: "username", type: "text", placeholder: "Nombre de usuario" },
         { name: "password", isPassword: true, placeholder: "Contraseña" },
@@ -43,7 +38,6 @@ export const Login: React.FC = () => {
                         key={name}
                         name={name}
                         type={type}
-                        placeholder={placeholder}
                         value={userData[name as keyof typeof userData]}
                         onChange={handleChange}
                         isPassword={isPassword}

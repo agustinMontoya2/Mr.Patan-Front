@@ -17,7 +17,7 @@ export const Register = () => {
         { name: "confirmPassword", isPassword: true, placeholder: "Confirmar contraseña" },
     ];
 
-    const [errors, setErrors] = useState<any>({});
+    const [errors, setErrors] = useState<FormErrors>({});
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -49,11 +49,10 @@ export const Register = () => {
                     key={name}
                     name={name}
                     type={type}
-                    placeholder={placeholder}
                     value={userData[name as keyof typeof userData]}
                     onChange={handleChange}
                     isPassword={isPassword}
-                    error={errors[name]}
+                    error={errors[name as keyof FormErrors]}
                     />
                     </div>
                 ))

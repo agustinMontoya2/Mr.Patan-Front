@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Footer = () => {
     return <div className="w-screen h-[8%] bg-[#000000] flex flex-row items-center justify-between px-6">
         <div>
@@ -7,13 +9,13 @@ export const Footer = () => {
         </div>
         <div className="flex flex-row items-center justify-between w-[110px]">
             <a href="tel:49583567" target="_blank">
-                <img src="/phone.svg" alt="telefono" className="w-8"/>
+            <Image src="/phone.svg" alt="telefono" width={32} height={32} />
             </a>
             <a href="https://wa.me/5491154691450" target="_blank">
-                <img src="/whatsapp.svg" alt="whatsapp" className="w-8"/>
+            <Image src="/whatsapp.svg" alt="whatsapp" width={32} height={32} />
             </a>
             <a href="https://www.instagram.com/vetmrpatan/" target="_blank">
-                <img src="/instagram.svg" alt="instagram" className="w-8" />
+            <Image src="/instagram.svg" alt="instagram" width={32} height={32} />
             </a>
         </div>
     </div>;

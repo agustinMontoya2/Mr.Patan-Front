@@ -3,15 +3,6 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react"; // O usa react-icons
 
-interface InputProps {
-  name: string;
-  type?: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  isPassword?: boolean; // Solo es necesario para los campos de contraseña
-  error?: string;
-}
 
 const Input: React.FC<InputProps> = ({
   name,
@@ -33,7 +24,7 @@ const Input: React.FC<InputProps> = ({
         id={name}
         name={name}
         type={isPassword ? (seePassword ? "text" : "password") : type}
-        // placeholder={placeholder}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
         className="border border-gray-300 rounded-lg w-full p-2 pr-10"

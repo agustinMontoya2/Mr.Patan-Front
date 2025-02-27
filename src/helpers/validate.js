@@ -3,7 +3,6 @@ export default function registerValidation(input) {
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]{2,50}$/;
 
   const emailRegex = /\S+@\S+\.\S+/; // Expresión regular para el email
-  const dniRegex = /^\d{7,8}$/; // Expresión regular para el DNI
   const usernameRegex = /^[a-zA-Z0-9ñÑ_.:¡!@#$%^&*()\-+=<>¿?'/]{3,15}$/; // Expresión regular para el username
 
   // Validación del nombre
