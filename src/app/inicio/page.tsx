@@ -11,8 +11,8 @@ const Inicio: React.FC = () => {
         <div className="flex flex-col items-center justify-between h-screen w-screen">
             <Navbar />
             <div className="flex flex-row items-center justify-center sm:justify-between md:w-[80%] w-[90%] h-full">
-            <Services />
             <Login />
+            <Services />
             </div>
             <Footer />
         </div>
