@@ -40,7 +40,7 @@ export const Register = () => {
     };
 
     return (
-    <div className="bg-whiteTransparent text-[rgb(0,0,0)] w-4/6 min-w-[275px] h-[60%] sm:h-[70%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl flex flex-col items-center justify-around">
+    <div className="bg-whiteTransparent text-[rgb(0,0,0)] w-4/6 min-w-[275px] h-[70%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl flex flex-col items-center justify-around">
         <div className="flex flex-col items-center justify-around w-[80%] h-/6 font-kanit">
             {
                 inputs.map(({ name, type, placeholder, isPassword }) => (
