@@ -1,0 +1,77 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "T0DQ5@example.com",
+            "username": "johndoe",
+            "pets": [
+                {
+                    "id": 1,
+                    "name": "Gamora",
+                    "type": "dog",
+                    "breed": "Golden Retriever",
+                    "age": 6,
+                    "gender": "female",
+                    "image": "https://example.com/fido.jpg",
+                    "appointment": [
+                        {
+                            "id": 1,
+                            "date": "01/08/24",
+                            "time": "18:30 pm",
+                            "status": "cancelado",
+                            "type": "corte"
+                        }
+                    ],
+                    "ownerId": 1
+                },
+                {
+                    "id": 2,
+                    "name": "Doki",
+                    "type": "dog",
+                    "breed": "Caniche",
+                    "age": 16,
+                    "gender": "male",
+                    "image": "https://example.com/fido.jpg",
+                    "appointment": [
+                        {
+                            "id": 2,
+                            "date": "01/08/24",
+                            "time": "18:30 pm",
+                            "status": "cancelado",
+                            "type": "corte"
+                        }
+                    ],
+                    "ownerId": 1
+                }
+            ]
+            },
+            {
+                "id": 2,
+                "name": "John Doe",
+                "email": "T0DQ5@example.com",
+                "username": "johndoe",
+                "pets": [
+                    {
+                        "id": 3,
+                        "name": "Pepe",
+                        "type": "dog",
+                        "breed": "Mestizo",
+                        "age": 6,
+                        "gender": "male",
+                        "image": "https://example.com/fido.jpg",
+                        "appointment": [
+                            {
+                                "id": 3,
+                                "date": "01/08/24",
+                                "time": "18:30 pm",
+                                "estado": "cancelado",
+                                "asunto": "corte"
+                            }
+                        ],
+                        "ownerId": 2
+                    }
+                ]
+            }
+    ]
+}

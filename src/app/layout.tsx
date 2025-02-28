@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mr.Patan",
+  title: "Mr.Patan 2.0",
   description: "Veterinaria de confianza",
   icons: "/iconCross.svg",
 };
