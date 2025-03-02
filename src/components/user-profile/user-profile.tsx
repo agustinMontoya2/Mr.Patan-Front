@@ -55,7 +55,7 @@ function UserProfile() {
 
     useEffect(() => {
         handleGetUser();
-    }, [])
+    }, [router])
   return (
     <div className='flex flex-col items-center justify-center bg-whiteTransparent text-2xl font-kanit text-[rgb(0,0,0)] w-[80%] min-w-[275px] max-w-[800px] h-1/4 border-solid border-[rgb(0,0,0)] border-2 rounded-2xl'>
         {

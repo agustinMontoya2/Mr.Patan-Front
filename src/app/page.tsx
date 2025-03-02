@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function Home() {
   
   useEffect(() => {
     handleGetUser()
-  }, [router])
+  }, [handleGetUser])
   return (
 <div className="flex flex-col items-center justify-between h-screen w-screen">
 
