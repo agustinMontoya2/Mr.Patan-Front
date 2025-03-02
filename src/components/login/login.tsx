@@ -22,11 +22,11 @@ export const Login: React.FC = () => {
             if (res && res.User) {
                 const userWithoutPassword = {...res.User, pets: []};
                 localStorage.setItem("user", JSON.stringify(userWithoutPassword));
-                res.User.pets ? (
+                if (res.User.pets) {
                     localStorage.setItem("pets", JSON.stringify(res.User.pets))
-                ) : (
+                } else {
                     localStorage.setItem("pets", JSON.stringify([]))
-                )
+                }
                 window.dispatchEvent(new Event("userSessionUpdated"));
                 alert("Bienvenido");
                 router.push("/perfil");
@@ -45,7 +45,7 @@ export const Login: React.FC = () => {
         if (user) {
             router.push("/perfil");
         }
-    }, []);
+    }, [router]);
     
 
     const inputs = [
