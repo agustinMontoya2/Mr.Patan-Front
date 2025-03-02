@@ -18,12 +18,11 @@ export const Login: React.FC = () => {
             return;
         }
         try {
-            const res = await loginUser(userData);
-            if (res && res.User) {
-                const userWithoutPassword = {...res.User, pets: []};
-                localStorage.setItem("user", JSON.stringify(userWithoutPassword));
-                if (res.User.pets) {
-                    localStorage.setItem("pets", JSON.stringify(res.User.pets))
+            const user = await loginUser(userData);
+            if (user) {
+                localStorage.setItem("user", JSON.stringify(user));
+                if (user.pets) {
+                    localStorage.setItem("pets", JSON.stringify(user.pets))
                 } else {
                     localStorage.setItem("pets", JSON.stringify([]))
                 }

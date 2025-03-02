@@ -32,16 +32,14 @@ function UserProfile() {
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setUser(updatedUser);
         setEditingField(null);
+        router.push("/");
     }
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || !e.target.files[0]) return;
-    
-    
 
     const file = e.target.files[0];
     const reader = new FileReader();
-    
 
     reader.onloadend = () => {
         const newUser = { ...user, image: reader.result as string };
@@ -49,8 +47,6 @@ function UserProfile() {
         handleGetUser();
     };
     reader.readAsDataURL(file);
-
-    
 }
 
     useEffect(() => {
