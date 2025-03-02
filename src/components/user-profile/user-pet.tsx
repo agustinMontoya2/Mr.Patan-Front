@@ -1,5 +1,4 @@
 "use client";
-import { getPets } from '@/helpers/users';
 import { IUserPet } from '@/interfaces/user';
 import { Plus } from 'lucide-react';
 import Image from 'next/image';

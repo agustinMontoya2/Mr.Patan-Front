@@ -1,11 +1,9 @@
 "use client";
-import { getUsers } from '@/helpers/users';
 import { IUser } from '@/interfaces/user';
 import { SquarePen } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
-import Input from '../input/input';
 
 function UserProfile() {
     const [user, setUser] = useState<IUser>();
