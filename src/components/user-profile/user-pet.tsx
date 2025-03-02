@@ -9,7 +9,7 @@ function UserPet() {
     const [pets, setPets] = useState<IUserPet[]>([]);
 
     const handleGetPets = async () => {
-        const pets = await getPets();
+        const pets = localStorage.getItem("pets") ? JSON.parse(localStorage.getItem("pets") as string) : [];
         setPets(pets);
     }
 
@@ -34,7 +34,7 @@ function UserPet() {
         }
         <button className='bg-gray-100 text-gray-500 flex flex-row items-center justify-center h-1/4 min-h-1/4 w-full border-b border-gray-300 rounded-2xl hover:bg-gray-200 active:bg-gray-300 transition'>
   <p className='flex items-center gap-2 underline'>
-    <Plus size={20} /> Agregar mascota
+    <Plus size={20} /> Agregar mascotas
   </p>
 </button>
     </div>
