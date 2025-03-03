@@ -2,15 +2,19 @@ import { IMenuBurguerItem, IMenuItem } from "@/interfaces/menu"
 import { IUser, IUserPet } from "@/interfaces/user";
 import { ChevronDown, ChevronUp, Plus, X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
-    const [openProfileMenu, setOpenProfileMenu] = useState(false); 
+    const router = useRouter();
+  
+  const [openProfileMenu, setOpenProfileMenu] = useState(false); 
     const [openPetsMenu, setOpenPetsMenu] = useState(false); 
     const [pets, setPets] = useState<IUserPet[]>([]);
     const [user, setUser] = useState<IUser | null>(null);
     const services: IMenuBurguerItem[] = [
-        { title: "Alimentacion"},
+        { title: "Alimentos"},
         { title: "Ropa"},
         { title: "Juguetes"},
         { title: "Accesorios"},
@@ -18,9 +22,10 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
     ]
 
     const profileOptions = [
-        { title: "Mi perfil"},
-        {title: "Mi carrito"},
-        {title: "Mis ordenes"}
+        { title: "Mi perfil", link: "/perfil"},
+        { title: "Mis favoritos", link: "/favoritos"},
+        {title: "Mi carrito", link: "/carrito"},
+        {title: "Mis ordenes", link: "/ordenes"},
     ]
     const handleGetUserData = () => {
         const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null;
@@ -52,7 +57,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <X onClick={() => toggleMenu()} size={32} color="black" className="absolute top-5 right-5" />
+        <X onClick={() => toggleMenu()} size={32} color="black" className="absolute top-5 right-5 cursor-pointer" />
 
         <div className="flex flex-col h-[90%] w-full justify-between pt-10">
             <div className="flex flex-col">
@@ -60,7 +65,8 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
           {services.map((service, index) => (
             <a
               key={index}
-              className="text-xl py-3 px-4 hover:bg-gray-200 transition-all duration-300 cursor-pointer"
+              className="text-xl py-3 px-4 border-y border-gray-300 hover:bg-gray-200 transition-all duration-300 cursor-pointer"
+              onClick={() => router.push(`/productos/${service.title.toLowerCase()}`)}
             >
               {service.title}
             </a>
@@ -69,9 +75,9 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
   
           {/* Sección de perfil */}
           <div
-            className="w-full text-xl py-3 transition-all duration-300 cursor-pointer"
+            className="w-full text-xl border-y border-gray-300 transition-all duration-300 cursor-pointer"
           >
-            <div onClick={toggleProfileMenu} className=" flex items-center px-4 hover:bg-gray-200 transition-all duration-300">
+            <div onClick={toggleProfileMenu} className="flex items-center px-4 min-h-[54px] hover:bg-gray-200 transition-all duration-300">
               {/* Foto de perfil */}
               {
                 user?.image ? <Image src={user.image} alt="Perfil" className="w-10 h-10 rounded-full object-cover" width={40} height={40} /> : <Image src="/iconProfile.svg" alt="Perfil" className="w-10 h-10 rounded-full" width={40} height={40} />
@@ -87,17 +93,18 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
           {openProfileMenu && (
             <div className="mt-2">
               {profileOptions.map((option, index) => (
-                <a
+                <Link
+                  href={option.link}
                   key={index}
                   className="pl-16 block text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
                 >
                   {option.title}
-                </a>
+                </Link>
               ))}
   
               {/* Menú desplegable de mascotas */}
               <div
-                className="text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300 cursor-pointer"
+                className="text-lg border-t border-gray-300 py-2 hover:bg-gray-100 rounded-md transition-all duration-300 cursor-pointer"
                 onClick={togglePetsMenu}
               >
                 <div className="flex items-center pl-16">
@@ -110,7 +117,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
   
               {/* Lista de mascotas desplegable */}
               {openPetsMenu && (
-                <div className="mt-2 text-lg">
+                <div className="mt-2 text-lg border-gray-300">
                     
                   {pets.map((pet, index) => (
                     <div key={index} className="flex items-center pl-16 gap-2 hover:bg-gray-100 transition-all duration-300">
@@ -131,7 +138,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
                   
                 </div>
               )}
-              <a onClick={() => logout()} className="block text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
+              <a onClick={() => logout()} className="border-t border-gray-300 flex items-center justify-center text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
                 >Cerrar sesion
                 </a>
             </div>

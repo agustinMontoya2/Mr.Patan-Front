@@ -6,6 +6,8 @@ const harcodedUser: IUser = {
   email: "user@mail.com",
   username: "user",
   image: "",
+  favorites: [],
+  cart: [],
   pets: [
     {
       id: 1,

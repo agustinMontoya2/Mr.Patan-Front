@@ -1,13 +1,16 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Menu, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ServicesMobile } from "../mobile/services/services-mobile";
 import { usePathname, useRouter } from "next/navigation";
 import { MenuBurger } from "../menu/menu";
+import { IProduct } from "@/interfaces/products";
+import { INavbar } from "@/interfaces/menu";
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<INavbar> = ({changeCart}) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [cart, setCart] = useState<IProduct[]>([]);
     const menuRef = useRef<HTMLDivElement | null>(null); 
 
     const router = useRouter();
@@ -20,9 +23,18 @@ export const Navbar: React.FC = () => {
     const isLogin = pathname === "/inicio";
     const isRegister = pathname === "/registro";
 
-    useEffect(() => {
-        console.log("click");
+    const handleCart = () => {
+        const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') as string) : []
+        setCart(cart)
         
+    }
+    
+
+    useEffect(() => {
+        handleCart()
+    }, [changeCart])
+
+    useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
         if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
           setMenuOpen(false);
@@ -42,8 +54,12 @@ export const Navbar: React.FC = () => {
                 <Image src="/iconCross.svg" alt="Logo" width={50} height={50} />
                 <h1 className="font-carterOne text-4xl text-[#F5F500] font-semibold">Mr.Patan</h1>
             </div>
+            <div className="flex flex-row items-center gap-6">
+                <div className="flex flex-row items-center gap-2">
+                <ShoppingCart size={32} color="white" />
+                <p className="text-white text-xl font-kanit">{cart.length}</p>
+                </div>
             <div ref={menuRef} className="">
-                
                 <button onClick={() => toggleMenu()} className="top-5 right-4 flex flex-row items-center z-50">
                     
 
@@ -68,7 +84,7 @@ export const Navbar: React.FC = () => {
 
                 }
             </div>
-                
+                </div>
         </div>
     )
 };
