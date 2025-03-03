@@ -21,16 +21,21 @@ export const Login: React.FC = () => {
             const user = await loginUser(userData);
             if (user) {
                 localStorage.setItem("user", JSON.stringify(user));
-                user.pets ?
-                    localStorage.setItem("pets", JSON.stringify(user.pets)) :
+                if (user.pets) {
+                    localStorage.setItem("pets", JSON.stringify(user.pets))
+                } else {
                     localStorage.setItem("pets", JSON.stringify([]))
-                user.favorites ?
-                    localStorage.setItem("favorites", JSON.stringify(user.favorites)) :
+                }
+                if (user.favorites) {
+                    localStorage.setItem("favorites", JSON.stringify(user.favorites))
+                } else {
                     localStorage.setItem("favorites", JSON.stringify([]))
-                user.cart?
-                    localStorage.setItem("cart", JSON.stringify(user.cart)) : 
+                }
+                if (user.cart) {
+                    localStorage.setItem("cart", JSON.stringify(user.cart))
+                } else {
                     localStorage.setItem("cart", JSON.stringify([]))
-                
+                }
                 window.dispatchEvent(new Event("userSessionUpdated"));
                 alert("Bienvenido");
                 router.push("/perfil");

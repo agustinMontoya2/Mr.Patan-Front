@@ -1,6 +1,6 @@
 "use client";
-import { ICard, IProduct } from '@/interfaces/products'
-import { ShoppingCart, Star } from 'lucide-react'
+import { ICard } from '@/interfaces/products'
+import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 

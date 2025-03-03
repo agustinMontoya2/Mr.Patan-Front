@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react'
 import Card from './card'
-import { ICard, ICards, IFavorite, IProduct } from '@/interfaces/products'
+import {  ICards, IFavorite, IProduct } from '@/interfaces/products'
 import { useRouter } from 'next/navigation';
 
 const Cards: React.FC<ICards> = ({products, updateCart}) => {
@@ -27,8 +27,6 @@ const Cards: React.FC<ICards> = ({products, updateCart}) => {
       const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') as string) : []
       setCart(cart)
     }
-
-    const router = useRouter();
       const handleAddToCart = (product: IProduct) => {
         if (cart.some(item => item.name === product.name)) {
           const newCart = cart.filter(item => item.name !== product.name)
