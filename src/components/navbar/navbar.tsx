@@ -18,7 +18,6 @@ export const Navbar: React.FC<INavbar> = ({changeCart}) => {
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
-        
     }
     const isLogin = pathname === "/inicio";
     const isRegister = pathname === "/registro";

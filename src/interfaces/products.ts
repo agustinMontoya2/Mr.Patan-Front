@@ -1,6 +1,11 @@
+export interface IProductsView {
+  category: string;
+}
+
 export interface IProduct {
   id: number;
   name: string;
+  category: string;
   price: number;
   image: string;
   description: string;

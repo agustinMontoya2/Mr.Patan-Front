@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react'
 import Card from './card'
 import {  ICards, IFavorite, IProduct } from '@/interfaces/products'
-import { useRouter } from 'next/navigation';
 
 const Cards: React.FC<ICards> = ({products, updateCart}) => {
   const [favorites, setFavorites] = React.useState<IFavorite[]>([])
