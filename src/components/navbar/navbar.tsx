@@ -49,15 +49,17 @@ export const Navbar: React.FC<INavbar> = () => {
     
     return (
         <div className="w-screen h-20 max-h-[68px] bg-[#7600F5] flex flex-row items-center justify-between px-4">
-            <div onClick={() => router.push("/perfil")} className="flex flex-row items-center justify-between h-4/5 w-[220px] cursor-pointer">
-                <Image src="/iconCross.svg" alt="Logo" width={50} height={50} />
-                <h1 className="font-carterOne text-4xl text-[#F5F500] font-semibold">Mr.Patan</h1>
+            <div onClick={() => router.push("/perfil")} className="flex flex-row items-center justify-center gap-2 h-4/5 w-[220px] cursor-pointer">
+                <Image src="/iconCross.svg" alt="Logo" width={50} height={50} className="min-w-[50px]" />
+                <h1 className="font-carterOne text-3xl text-[#F5F500] font-semibold">Mr.Patan</h1>
             </div>
             <div className="flex flex-row items-center gap-6">
+                { !isLogin && !isRegister && 
                 <div className="flex flex-row items-center gap-2">
-                <ShoppingCart size={32} color="white" />
+                <ShoppingCart size={28} color="white" /> 
                 <p className="text-white text-xl font-kanit">{cart.length}</p>
                 </div>
+                }
             <div ref={menuRef} className="">
                 <button onClick={() => toggleMenu()} className="top-5 right-4 flex flex-row items-center z-50">
                     

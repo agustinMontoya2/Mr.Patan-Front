@@ -3,13 +3,17 @@ import { Footer } from '@/components/footer/footer'
 import { Navbar } from '@/components/navbar/navbar'
 import Cards from '@/components/product-cards/cards'
 import { CartProvider } from '@/context/cart'
+import useRedirect from '@/customHooks/useRedirect'
 import { IProduct, IProductsView } from '@/interfaces/products'
 import React from 'react'
 
 const ProductView: React.FC <IProductsView> = ( { category } ) => {
     const products: IProduct[] = []
-    
     const categories = ["alimentos", "ropa", "juguetes", "accesorios", "medicamentos"]
+
+    useRedirect("user", "/inicio", true)
+    
+
 
     for (let i = 1; i < 21; i++) {
       products.push ({

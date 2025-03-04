@@ -45,6 +45,8 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
     const logout = () => {
         localStorage.removeItem("user");
         localStorage.removeItem("pets");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("favorites");
         window.location.reload();
     }
     
