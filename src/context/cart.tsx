@@ -1,7 +1,11 @@
 import { ICartContext, IProduct } from "@/interfaces/products";
 import { createContext, ReactNode, useState } from "react";
 
-export const CartContext = createContext<ICartContext | undefined>(undefined);
+export const CartContext = createContext<ICartContext>({
+    cart: [],
+    handleAddToCart: () => {},
+    handleGetCart: () => {},
+});
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<IProduct[]>([]);

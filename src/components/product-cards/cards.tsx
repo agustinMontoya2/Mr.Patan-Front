@@ -6,8 +6,8 @@ import { CartContext } from '@/context/cart';
 
 const Cards: React.FC<ICards> = ({products}) => {
   const [favorites, setFavorites] = React.useState<IFavorite[]>([])
+  
   const cartContext = React.useContext(CartContext)
-  if (!cartContext) return null
 
   const handleGetFavorites = () => {
     const favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites') as string) : []

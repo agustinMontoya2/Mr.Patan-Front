@@ -14,7 +14,6 @@ export const Navbar: React.FC<INavbar> = () => {
     const menuRef = useRef<HTMLDivElement | null>(null); 
 
     const cartContext = useContext(CartContext);
-    if(!cartContext) return null
     const cart = cartContext.cart
 
     const router = useRouter();
@@ -23,7 +22,7 @@ export const Navbar: React.FC<INavbar> = () => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
-    
+
     const isLogin = pathname === "/inicio";
     const isRegister = pathname === "/registro";
 
