@@ -1,5 +1,5 @@
 "use client"
-import FoodView from '@/views/productsView/products-view'
+import ProducView from '@/views/productsView/products-view'
 import { useParams } from 'next/navigation';
 import React from 'react'
 
@@ -9,7 +9,7 @@ import React from 'react'
 
     return (
       <div>
-        { category ? <FoodView category={category}/> : <h1>404</h1> }
+        { category ? <ProducView category={category}/> : <h1>404</h1> }
       </div>
     )
 

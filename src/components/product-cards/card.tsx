@@ -5,8 +5,6 @@ import Image from 'next/image'
 import React from 'react'
 
 const Card: React.FC<ICard> = ({product, favorites, cart, handleAddToCart, handleFavorite}) => {
-
-
   return (
     <div className='relative flex flex-col items-center justify-between py-3 bg-whiteTransparent text-[rgb(0,0,0)] w-60 h-68 min-h-[282px] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl'>
   <div className='absolute top-2 right-2 transition-all duration-300 active:scale-90'>

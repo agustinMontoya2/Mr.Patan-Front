@@ -30,13 +30,18 @@ export interface ICart {
 
 export interface ICards {
   products: IProduct[];
-  updateCart: () => void;
 }
 
 export interface ICard {
   product: IProduct;
   favorites: IFavorite[];
   cart: IProduct[];
-  handleFavorite: (product: IProduct) => void;
   handleAddToCart: (product: IProduct) => void;
+  handleFavorite: (product: IProduct) => void;
+}
+
+export interface ICartContext {
+  cart: IProduct[];
+  handleAddToCart: (product: IProduct) => void;
+  handleGetCart: () => void;
 }

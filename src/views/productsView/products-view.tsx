@@ -2,16 +2,13 @@
 import { Footer } from '@/components/footer/footer'
 import { Navbar } from '@/components/navbar/navbar'
 import Cards from '@/components/product-cards/cards'
+import { CartProvider } from '@/context/cart'
 import { IProduct, IProductsView } from '@/interfaces/products'
 import React from 'react'
 
-const FoodView: React.FC <IProductsView> = ( { category } ) => {
+const ProductView: React.FC <IProductsView> = ( { category } ) => {
     const products: IProduct[] = []
-    const [changeCart, setChangeCart] = React.useState(false)
-    const updateCart = ()=> {
-      setChangeCart(!changeCart)
-      console.log(changeCart);
-    }
+    
     const categories = ["alimentos", "ropa", "juguetes", "accesorios", "medicamentos"]
 
     for (let i = 1; i < 21; i++) {
@@ -60,12 +57,14 @@ const FoodView: React.FC <IProductsView> = ( { category } ) => {
     
   return (
     <div className='w-screen h-screen flex flex-col items-center justify-between'>
-        <Navbar changeCart={changeCart}/>
-        {categories.includes(category) ? <Cards products={productsByCategory} updateCart={updateCart}/> : 
+      <CartProvider>
+        <Navbar/>
+        {categories.includes(category) ? <Cards products={productsByCategory}/> : 
         <p>La categoria no existe</p>}
         <Footer/>
+        </CartProvider>
     </div>
   )
 }
 
-export default FoodView
+export default ProductView

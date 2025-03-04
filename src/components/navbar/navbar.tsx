@@ -1,17 +1,21 @@
 "use client";
 import { Menu, ShoppingCart } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ServicesMobile } from "../mobile/services/services-mobile";
 import { usePathname, useRouter } from "next/navigation";
 import { MenuBurger } from "../menu/menu";
-import { IProduct } from "@/interfaces/products";
 import { INavbar } from "@/interfaces/menu";
+import { CartContext } from "@/context/cart";
 
-export const Navbar: React.FC<INavbar> = ({changeCart}) => {
+export const Navbar: React.FC<INavbar> = () => {
+
     const [menuOpen, setMenuOpen] = useState(false);
-    const [cart, setCart] = useState<IProduct[]>([]);
     const menuRef = useRef<HTMLDivElement | null>(null); 
+
+    const cartContext = useContext(CartContext);
+    if(!cartContext) return null
+    const cart = cartContext.cart
 
     const router = useRouter();
     const pathname = usePathname();
@@ -19,19 +23,16 @@ export const Navbar: React.FC<INavbar> = ({changeCart}) => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
+    
     const isLogin = pathname === "/inicio";
     const isRegister = pathname === "/registro";
 
-    const handleCart = () => {
-        const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') as string) : []
-        setCart(cart)
-        
-    }
+    const handleCart = cartContext.handleGetCart
     
 
     useEffect(() => {
         handleCart()
-    }, [changeCart])
+    }, [])
 
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
