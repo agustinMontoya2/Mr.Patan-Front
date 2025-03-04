@@ -88,8 +88,8 @@ export const Login: React.FC = () => {
             }
         </div>
         <div className="flex flex-col items-center justify-around w-full h-1/3">
-            <button onClick={() => handleSubmit()} className="bg-[#9ace17] w-1/2 h-1/3 rounded-lg border border-solid border-[rgb(0,0,0)]">Iniciar Sesion</button>
-            <button onClick={() => router.push("/registro")} className="bg-[#F5D418] w-[40%] h-[30%] rounded-lg border border-solid border-[rgb(0,0,0)]">Registrarse</button>
+            <button className="bg-[#9ace17] w-1/2 h-1/3 rounded-lg border border-solid border-[rgb(0,0,0)]">Iniciar Sesion</button>
+            <button type="button" onClick={() => router.push("/registro")} className="bg-[#F5D418] w-[40%] h-[30%] rounded-lg border border-solid border-[rgb(0,0,0)]">Registrarse</button>
         </div>
         </form>
     </div>

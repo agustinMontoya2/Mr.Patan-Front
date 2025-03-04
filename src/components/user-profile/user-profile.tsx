@@ -13,9 +13,6 @@ function UserProfile() {
     const router = useRouter();
     const handleGetUser = async () => {
         const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null;
-        if (!user) {
-        router.push("/inicio");
-        }
         setUser(user);
     }
 

@@ -1,12 +1,15 @@
+"use client"
 import React from "react";
 
 import { Services } from "@/components/services/services";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import { Login } from "@/components/login/login";
+import useRedirect from "@/customHooks/useRedirect";
 
 
 const Inicio: React.FC = () => {
+    useRedirect("user", "/perfil", false);
     return (
         <div className="flex flex-col items-center justify-between h-screen w-screen">
             <Navbar />

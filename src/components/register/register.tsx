@@ -4,11 +4,9 @@ import Input from "../input/input";
 import { useRouter } from "next/navigation";
 import registerValidation from "../../helpers/validate";
 import { FormErrors } from "@/interfaces/errors";
-import useRedirect from "@/customHooks/useRedirect";
 
 export const Register = () => {
     const router = useRouter();
-    useRedirect("user", "/perfil", false);
 
     const initialUserData = {email: "", name: "", username: "", password: "", confirmPassword: ""};
     const [userData, setUserData] = useState(initialUserData);
