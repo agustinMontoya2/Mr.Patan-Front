@@ -9,7 +9,7 @@ import React from 'react'
 function Profile() {
   useRedirect("user", "/inicio", true);
   return (
-    <div className='flex flex-col items-center justify-between w-screen h-screen'>
+    <div className='flex flex-col items-center justify-between w-screen h-screen bg-profile'>
         <Navbar />
         <UserProfile />
         <UserPet />

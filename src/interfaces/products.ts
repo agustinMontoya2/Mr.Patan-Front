@@ -3,9 +3,10 @@ export interface IProductsView {
 }
 
 export interface IProduct {
-  id: number;
+  id: string;
   name: string;
   category: string;
+  subcategory: string[];
   price: number;
   image: string;
   description: string;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export const Footer = () => {
-    return <div className="w-screen h-20 max-h-[68px] bg-[#000000] flex flex-row items-center justify-between px-6">
+    return <div className="w-screen min-h-[68px] h-20 max-h-[68px] bg-[#000000] flex flex-row items-center justify-between px-6">
         <div>
             <a href="https://maps.app.goo.gl/3MkYCn4s9xuF9byQA" target="_blank">
                 <h2 className="font-carterOne text-2xl">Campichuelo 466 - CABA</h2>

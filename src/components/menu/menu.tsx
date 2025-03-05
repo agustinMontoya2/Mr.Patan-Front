@@ -18,7 +18,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
         { title: "Ropa"},
         { title: "Juguetes"},
         { title: "Accesorios"},
-        { title: "Medicamentos"},
+        { title: "Farmacia"},
     ]
 
     const profileOptions = [

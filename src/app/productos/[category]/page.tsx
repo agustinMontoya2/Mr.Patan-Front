@@ -11,7 +11,7 @@ import React from 'react'
 
     return (
       <div>
-        { category ? <ProducView category={category}/> : <h1>404</h1> }
+        { category ? <ProducView category={category} /> : <h1>404</h1> }
       </div>
     )
 

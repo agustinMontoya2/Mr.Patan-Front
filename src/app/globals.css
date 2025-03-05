@@ -19,10 +19,50 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url('/background2.png');
+  background-image: url('/background.png');
   background-size: cover;
   background-position: center;
-  
+}
+.bg-profile {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background3.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-alimentos {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background-food.png');
+  background-size: cover;
+  background-position: center;
+}
+.bg-juguetes {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background-toys2.png');
+  background-size: cover;
+  background-position: center;
+}
+.bg-accesorios {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background-accesories3.png');
+  background-size: cover;
+  background-position: center;
+}
+.bg-farmacia {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background-medicine3.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .font-kanit {
@@ -38,5 +78,8 @@ body {
 }
 
 .bg-whiteTransparent {
-  background-color: rgba(253, 254, 255, 0.845);
+  /* background-color: rgba(253, 254, 255, 0.845); */
+  
+  background-color: rgba(253, 254, 255, 0.7);
+  backdrop-filter: blur(12px);
 }
