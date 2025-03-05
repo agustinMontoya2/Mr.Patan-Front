@@ -1,6 +1,5 @@
 "use client";
 import { Menu, ShoppingCart } from "lucide-react";
-import Image from "next/image";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ServicesMobile } from "../mobile/services/services-mobile";
 import { usePathname, useRouter } from "next/navigation";
