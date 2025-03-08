@@ -11,7 +11,7 @@ import useRedirect from "@/customHooks/useRedirect";
 const Inicio: React.FC = () => {
     useRedirect("user", "/perfil", false);
     return (
-        <div className="flex flex-col items-center justify-between h-screen w-screen">
+        <div className="bg-home flex flex-col items-center justify-between h-screen w-screen">
             <Navbar />
             <div className="flex flex-row items-center justify-center sm:justify-between md:w-[80%] w-[90%] h-full">
             <Login />

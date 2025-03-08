@@ -8,7 +8,7 @@ import React from 'react'
 export default function Registro() {
   useRedirect("user", "/perfil", false);
   return (
-    <div className='w-screen h-screen flex flex-col items-center justify-between'>
+    <div className='bg-home w-screen h-screen flex flex-col items-center justify-between'>
         <Navbar/>
         <Register/>
         <Footer/>

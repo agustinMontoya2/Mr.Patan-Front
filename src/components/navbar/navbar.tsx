@@ -27,9 +27,11 @@ export const Navbar: React.FC<INavbar> = () => {
 
     const handleCart = cartContext.handleGetCart
     
+    
 
     useEffect(() => {
         handleCart()
+        
     }, [])
 
     useEffect(() => {
@@ -54,7 +56,7 @@ export const Navbar: React.FC<INavbar> = () => {
             </div>
             <div className="flex flex-row items-center gap-6">
                 { !isLogin && !isRegister && 
-                <div className="flex flex-row-reverse items-center gap-2">
+                <div className="flex flex-row-reverse items-center gap-2" onClick={()=> router.push("/perfil/carrito")}>
                 <ShoppingCart size={28} color="white" /> 
                 <p className="text-white text-xl font-kanit">{cart.length}</p>
                 </div>

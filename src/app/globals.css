@@ -19,10 +19,18 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  background-position: center;
+}
+.bg-home {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
   background-image: url('/background.png');
   background-size: cover;
   background-position: center;
 }
+
 .bg-profile {
   color: var(--foreground);
   background: var(--background);
@@ -80,6 +88,6 @@ body {
 .bg-whiteTransparent {
   /* background-color: rgba(253, 254, 255, 0.845); */
   
-  background-color: rgba(253, 254, 255, 0.7);
+  background-color: rgba(253, 254, 255, 0.582);
   backdrop-filter: blur(12px);
 }

@@ -17,7 +17,7 @@ const Card: React.FC<ICard> = ({product, favorites, cart, handleAddToCart, handl
   </div>
   <button onClick={() => handleAddToCart(product)} className='flex items-center gap-2 bg-black text-white px-3 py-1 rounded-xl transition-all duration-300 hover:bg-gray-800 active:scale-95'>
     <ShoppingCart size={20} />
-    {cart.some(item => item.name === product.name) ? "Eliminar del carrito" : "Agregar al carrito"}
+    Agregar al carrito
   </button>
 </div>
   )

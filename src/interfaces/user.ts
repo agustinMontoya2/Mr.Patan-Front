@@ -1,4 +1,4 @@
-import { ICart, IFavorite } from "./products";
+import { ICart, IFavorite, IProduct } from "./products";
 
 export interface IUserData {
   username: string;
@@ -14,6 +14,15 @@ export interface IUser {
   image: string;
   favorites: IFavorite[];
   cart: ICart[];
+  orders: [];
+}
+
+export interface IOrder {
+  id: number;
+  date: string;
+  total: number;
+  status: string;
+  cart: IProduct[];
 }
 
 export interface IUserPet {

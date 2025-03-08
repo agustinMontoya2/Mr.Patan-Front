@@ -23,9 +23,9 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
 
     const profileOptions = [
         { title: "Mi perfil", link: "/perfil"},
-        { title: "Mis favoritos", link: "/favoritos"},
-        {title: "Mi carrito", link: "/carrito"},
-        {title: "Mis ordenes", link: "/ordenes"},
+        { title: "Mis favoritos", link: "/perfil/favoritos"},
+        {title: "Mi carrito", link: "/perfil/carrito"},
+        {title: "Mis ordenes", link: "/perfil/ordenes"},
     ]
     const handleGetUserData = () => {
         const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null;
@@ -47,7 +47,8 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
         localStorage.removeItem("pets");
         localStorage.removeItem("cart");
         localStorage.removeItem("favorites");
-        window.location.reload();
+        localStorage.removeItem("orders");
+        router.push("/inicio");
     }
     
     useEffect(() => {

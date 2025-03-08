@@ -36,6 +36,11 @@ export const Login: React.FC = () => {
                 } else {
                     localStorage.setItem("cart", JSON.stringify([]))
                 }
+                if (user.orders) {
+                    localStorage.setItem("orders", JSON.stringify(user.orders))
+                } else {
+                    localStorage.setItem("orders", JSON.stringify([]))
+                }
                 window.dispatchEvent(new Event("userSessionUpdated"));
                 alert("Bienvenido");
                 router.push("/perfil");

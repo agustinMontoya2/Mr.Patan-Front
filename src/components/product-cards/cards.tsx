@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Card from './card'
 import {  ICards, IFavorite, IProduct } from '@/interfaces/products'
 import { CartContext } from '@/context/cart';
@@ -7,6 +7,7 @@ import { Filters } from './filters';
 import { IFilters } from '@/interfaces/menu';
 import { ChevronDown } from 'lucide-react';
 import { Search } from './search';
+import { AddedToCart } from '../cart/added-cart';
 
 const Cards: React.FC<ICards> = ({products}) => {
   const [favorites, setFavorites] = React.useState<IFavorite[]>([])
@@ -16,7 +17,9 @@ const Cards: React.FC<ICards> = ({products}) => {
   })
   const [searchTerm, setSearchTerm] = React.useState<string>('')
   const [seeFilters, setSeeFilters] = React.useState<boolean>(false)
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false)
   const cartContext = React.useContext(CartContext)
+  const AddedRef = useRef<HTMLDivElement>(null); 
 
   const toggleCategory = (category: string) => {
     console.log(category);
@@ -42,14 +45,12 @@ const Cards: React.FC<ICards> = ({products}) => {
     console.log(searchTerm);
     
   }
-  console.log(products);
   
 
   const filteredProducts = products.filter(product =>
     (filters.category.length === 0 || filters.category.every(category => product.subcategory.includes(category))) 
     &&
     product.name.toLowerCase().includes(searchTerm.toLowerCase())) 
-    console.log(filteredProducts);
     
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (filters.priceOrder === 'asc') {
@@ -95,8 +96,9 @@ const Cards: React.FC<ICards> = ({products}) => {
       handleGetFavorites()
     }
     const handleGetCart = cartContext.handleGetCart
-      const handleAddToCart = (product: IProduct) => {
-        cartContext.handleAddToCart(product)
+      const handleAddToCart = async (product: IProduct) => {
+        await cartContext.handleAddToCart(product)
+        setMenuOpen(true)
         handleGetCart()
       }
     
@@ -105,9 +107,29 @@ const Cards: React.FC<ICards> = ({products}) => {
         handleGetCart()
         // handleGetSubcategories()
       }, [])
+      useEffect(() => {
+        console.log("abriendo menu");
+        
+        const handleClickOutside = (event: MouseEvent) => {
+          if (AddedRef.current && !AddedRef.current.contains(event.target as Node)) {
+            console.log("cerrando menu");
+            
+            setMenuOpen(false);
+          }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, [menuOpen]);
 
   return (
     <div className={`w-full h-full py-4 gap-8 overflow-y-auto flex flex-col items-center justify-start bg-${products[0].category}`}>
+      <div ref={AddedRef} className='absolute top-0 right-0'>
+      <AddedToCart menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </div>
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       { seeFilters ?
       <Filters toggleCategory={toggleCategory} setPriceOrder={setPriceOrder} handleDeleteCategories={handleDeleteCategories} handleSeeFilters={handleSeeFilters} subCategories={uniqueSubCategories()} filters={filters}/>

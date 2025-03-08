@@ -1,6 +1,13 @@
+import { IProduct } from "./products";
+
 export interface IMenuItem {
   toggleMenu: () => void;
   menuOpen: boolean;
+}
+
+export interface IAddedToCart {
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IMenuBurguerItem {
@@ -29,4 +36,14 @@ export interface IFiltersComponent {
 export interface ISearchBar {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
+}
+
+export interface ICartProduct {
+  product: IProduct;
+  handleAddQuantity: (product: IProduct) => void;
+  handleDeleteQuantity: (product: IProduct) => void;
+}
+
+export interface ICartHeader {
+  products: IProduct[];
 }

@@ -10,6 +10,7 @@ export interface IProduct {
   price: number;
   image: string;
   description: string;
+  quantity: number;
 }
 
 export interface IProducts {
@@ -45,4 +46,8 @@ export interface ICartContext {
   cart: IProduct[];
   handleAddToCart: (product: IProduct) => void;
   handleGetCart: () => void;
+  handleAddQuantity: (product: IProduct) => void;
+  handleDeleteProduct: (product: IProduct) => void;
+  handleDeleteQuantity: (product: IProduct) => void;
+  handleDeleteCart: () => void;
 }
