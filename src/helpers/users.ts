@@ -8,6 +8,7 @@ const harcodedUser: IUser = {
   image: "",
   favorites: [],
   cart: [],
+  orders: [],
   pets: [
     {
       id: 1,
