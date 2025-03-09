@@ -1,10 +1,10 @@
 "use client";
-import { IUserPet, IUserPetComponent } from '@/interfaces/user';
+import { IUserPet } from '@/interfaces/user';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-export const UserPet: React.FC<IUserPetComponent> =() => {
+export const UserPet: React.FC =() => {
     const [pets, setPets] = useState<IUserPet[]>([]);
 
     const handleGetPets = async () => {

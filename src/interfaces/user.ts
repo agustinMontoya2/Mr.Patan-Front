@@ -70,6 +70,6 @@ export interface IPetData {
   hairCuts: { date: string; description: string; groomer: string }[];
 }
 
-export interface IUserPetComponent {
-  // setSelectedPet: (pet: IUserPet) => void;
-}
+// export interface IUserPetComponent {
+//   // setSelectedPet: (pet: IUserPet) => void;
+// }
