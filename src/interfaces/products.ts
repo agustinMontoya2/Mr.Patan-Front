@@ -1,3 +1,5 @@
+import { IOrder } from "./user";
+
 export interface IProductsView {
   category: string;
 }
@@ -50,4 +52,8 @@ export interface ICartContext {
   handleDeleteProduct: (product: IProduct) => void;
   handleDeleteQuantity: (product: IProduct) => void;
   handleDeleteCart: () => void;
+}
+
+export interface IOrderComponent {
+  order: IOrder;
 }

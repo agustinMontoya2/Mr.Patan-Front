@@ -12,9 +12,9 @@ export const OrdersComponent = () => {
         handleGetOrders()
     }, [])
     return (
-        <div className="bg-whiteTransparent text-[rgb(0,0,0)] w-full h-[80%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl">
+        <div className="flex flex-col gap-4 p-2 overflow-y-scroll bg-whiteTransparent text-[rgb(0,0,0)] min-w-[320px] w-full h-[80%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl">
         {orders.map((order: IOrder) => {
-            return <OrderComponent key={order.id}/>
+            return <OrderComponent order={order} key={order.id}/>
         })}
         </div>
         )
