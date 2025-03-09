@@ -96,8 +96,8 @@ const Cards: React.FC<ICards> = ({products}) => {
       handleGetFavorites()
     }
     const handleGetCart = cartContext.handleGetCart
-      const handleAddToCart = async (product: IProduct) => {
-        await cartContext.handleAddToCart(product)
+      const handleAddToCart = (product: IProduct) => {
+        cartContext.handleAddToCart(product)
         setMenuOpen(true)
         handleGetCart()
       }

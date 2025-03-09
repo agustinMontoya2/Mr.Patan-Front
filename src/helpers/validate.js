@@ -3,7 +3,7 @@ export default function registerValidation(input) {
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]{2,50}$/;
 
   const emailRegex = /\S+@\S+\.\S+/; // Expresión regular para el email
-  const usernameRegex = /^[a-zA-Z0-9ñÑ_.:¡!@#$%^&*()\-+=<>¿?'/]{3,15}$/; // Expresión regular para el username
+  // const usernameRegex = /^[a-zA-Z0-9ñÑ_.:¡!@#$%^&*()\-+=<>¿?'/]{3,15}$/; // Expresión regular para el username
 
   // Validación del nombre
   if (!input.name) {
@@ -19,12 +19,12 @@ export default function registerValidation(input) {
     errors.email = "El email no es válido";
   }
 
-  // Validación del username
-  if (!input.username) {
-    errors.username = "El nombre de usuario es obligatorio";
-  } else if (!usernameRegex.test(input.username)) {
-    errors.username = "Debe tener entre 3 y 15 caracteres";
-  }
+  // // Validación del username
+  // if (!input.username) {
+  //   errors.username = "El nombre de usuario es obligatorio";
+  // } else if (!usernameRegex.test(input.username)) {
+  //   errors.username = "Debe tener entre 3 y 15 caracteres";
+  // }
 
   // Validación de la contraseña
   const passwordRegex =

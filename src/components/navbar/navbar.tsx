@@ -2,10 +2,11 @@
 import { Menu, ShoppingCart } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ServicesMobile } from "../mobile/services/services-mobile";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { MenuBurger } from "../menu/menu";
 import { INavbar } from "@/interfaces/menu";
 import { CartContext } from "@/context/cart";
+import Link from "next/link";
 
 export const Navbar: React.FC<INavbar> = () => {
 
@@ -14,8 +15,6 @@ export const Navbar: React.FC<INavbar> = () => {
 
     const cartContext = useContext(CartContext);
     const cart = cartContext.cart
-
-    const router = useRouter();
     const pathname = usePathname();
 
     const toggleMenu = () => {
@@ -50,16 +49,23 @@ export const Navbar: React.FC<INavbar> = () => {
     
     return (
         <div className="w-screen min-h-[68px] h-20 max-h-[68px] bg-[#7600F5] flex flex-row items-center justify-between px-4">
-            <div onClick={() => router.push("/perfil")} className="flex flex-row items-center justify-centerh-4/5 w-[220px] cursor-pointer">
-                {/* <Image src="/iconCross.svg" alt="Logo" width={50} height={50} className="min-w-[50px]" /> */}
+            <Link
+            href="/perfil"
+            passHref
+            className="w-1/3 flex flex-row "
+            >
+            <div className="flex flex-row items-center justify-centerh-4/5 w-[220px] cursor-pointer">
                 <h1 className="font-carterOne text-3xl text-[#F5F500] font-semibold">Mr.Patan</h1>
             </div>
+            </Link>
             <div className="flex flex-row items-center gap-6">
                 { !isLogin && !isRegister && 
-                <div className="flex flex-row-reverse items-center gap-2" onClick={()=> router.push("/perfil/carrito")}>
+                <Link href="/perfil/carrito" passHref>
+                <div className="flex flex-row-reverse items-center gap-2">
                 <ShoppingCart size={28} color="white" /> 
                 <p className="text-white text-xl font-kanit">{cart.length}</p>
                 </div>
+                </Link>
                 }
             <div ref={menuRef} className="">
                 <button onClick={() => toggleMenu()} className="top-5 right-4 flex flex-row items-center z-50">

@@ -1,27 +1,31 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Input from "../input/input";
 import { loginUser } from "@/helpers/users";
 
 export const Login: React.FC = () => {
     const router = useRouter();
 
-    const initialUserData = {username: "", password: ""};
+    const initialUserData = {email: "", password: ""};
     const [userData, setUserData] = useState(initialUserData);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserData({...userData, [e.target.name]: e.target.value});
     }
     const handleSubmit = async () => {
-        if (userData.username.length === 0 || userData.password.length === 0) {
+        if (userData.email.length === 0 || userData.password.length === 0) {
             alert("Los campos no pueden estar vacios");
             return;
         }
         try {
             const user = await loginUser(userData);
+            console.log(user);
+            
             if (user) {
                 localStorage.setItem("user", JSON.stringify(user));
                 if (user.pets) {
+                    console.log(user.pets);
+                    
                     localStorage.setItem("pets", JSON.stringify(user.pets))
                 } else {
                     localStorage.setItem("pets", JSON.stringify([]))
@@ -54,31 +58,24 @@ export const Login: React.FC = () => {
         
     }
 
-    useEffect(() => {
-        const user = localStorage.getItem("user");
-        if (user) {
-            router.push("/perfil");
-        }
-    }, [router]);
     
 
     const inputs = [
-        { name: "username", type: "text", placeholder: "Nombre de usuario" },
+        { name: "email", type: "email", placeholder: "Correo electronico" },
         { name: "password", isPassword: true, placeholder: "Contraseña" },
     ];
 
 
-    return <div className="bg-whiteTransparent text-[rgb(0,0,0)] w-[40%] min-w-[275px] h-[40%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl">
+    return <div className="bg-whiteTransparent flex flex-col items-center justify-center text-[rgb(0,0,0)] w-[40%] min-w-[275px] h-[40%] border-solid border-[rgb(0,0,0)] border-2 rounded-2xl">
         <form onSubmit={(e) => {
             e.preventDefault()
             handleSubmit();
             }}
-            className="flex flex-col items-center justify-around w-full h-full">
-            <div className="flex flex-col items-center justify-around w-full h-2/3 font-kanit">
-            
+            className="flex flex-col items-center justify-around w-[80%] h-[95%]">
+            <div className="flex flex-col items-center justify-around w-full h-[60%] font-kanit">
             {
                 inputs.map(({ name, type, placeholder, isPassword }) => (
-                    <div key={name} className="w-[80%]">
+                    <div key={name} className="w-full">
                 <h2 className="text-2xl font-normal mb-2">{placeholder}</h2>
                     <Input
                         key={name}
@@ -92,9 +89,18 @@ export const Login: React.FC = () => {
                 ))
             }
         </div>
-        <div className="flex flex-col items-center justify-around w-full h-1/3">
-            <button className="bg-[#9ace17] w-1/2 h-1/3 rounded-lg border border-solid border-[rgb(0,0,0)]">Iniciar Sesion</button>
-            <button type="button" onClick={() => router.push("/registro")} className="bg-[#F5D418] w-[40%] h-[30%] rounded-lg border border-solid border-[rgb(0,0,0)]">Registrarse</button>
+        <div className="flex flex-col items-center justify-center gap-4 w-full h-[40%]">
+            <button 
+            className="bg-green-500 w-full h-[25%] rounded-lg border border-black shadow-md 
+            hover:bg-green-600 hover:shadow-lg active:scale-95 transition-all duration-300"
+            >Iniciar sesión
+            </button>
+            <button type="button"
+            onClick={() => router.push('/registro')} 
+                className="bg-yellow-400 w-full h-[25%] rounded-lg border border-black shadow-md 
+                hover:bg-yellow-500 hover:shadow-lg active:scale-95 transition-all duration-300"
+                >Registrarse
+            </button>
         </div>
         </form>
     </div>

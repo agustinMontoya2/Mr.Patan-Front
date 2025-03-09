@@ -4,7 +4,7 @@ const harcodedUser: IUser = {
   id: 1,
   name: "User",
   email: "user@mail.com",
-  username: "user",
+  password: "@Pass123",
   image: "",
   favorites: [],
   cart: [],
@@ -17,13 +17,105 @@ const harcodedUser: IUser = {
       breed: "Golden Retriever",
       age: 6,
       gender: "female",
+      birthdate: "01/08/24",
+      medicalHistory: [
+        {
+          date: "01/08/24",
+          description: "Descripción de la consulta",
+          vet: "Veterinaria 1",
+        },
+        {
+          date: "02/08/24",
+          description: "Descripción de la consulta",
+          vet: "Veterinaria 2",
+        },
+        {
+          date: "03/08/24",
+          description: "Descripción de la consulta",
+          vet: "Veterinaria 1",
+        },
+        {
+          date: "04/08/24",
+          description: "Descripción de la consulta",
+          vet: "Veterinaria 2",
+        },
+      ],
+      hairCuts: [
+        {
+          date: "01/08/24",
+          description: "Descripción del corte",
+          groomer: "Groomer 1",
+        },
+        {
+          date: "02/08/24",
+          description: "Descripción del corte",
+          groomer: "Groomer 2",
+        },
+      ],
+      weight: 20,
       image:
         "https://res.cloudinary.com/dxpxzcj2i/image/upload/v1740710816/Captura_de_pantalla_2025-02-27_234521_g2zktx.png",
       appointment: [
         {
           id: 1,
           date: "01/08/24",
-          time: "18:30 pm",
+          time: "12:30",
+          status: "cancelado",
+          type: "corte",
+        },
+        {
+          id: 2,
+          date: "01/08/24",
+          time: "13:30",
+          status: "confirmado",
+          type: "consulta",
+        },
+        {
+          id: 3,
+          date: "01/08/24",
+          time: "14:30",
+          status: "pendiente",
+          type: "baño",
+        },
+        {
+          id: 4,
+          date: "02/08/24",
+          time: "18:30",
+          status: "confirmado",
+          type: "corte y baño",
+        },
+        {
+          id: 1,
+          date: "03/08/24",
+          time: "19:30",
+          status: "cancelado",
+          type: "corte",
+        },
+        {
+          id: 2,
+          date: "04/08/24",
+          time: "10:30",
+          status: "confirmado",
+          type: "consulta",
+        },
+        {
+          id: 3,
+          date: "01/09/24",
+          time: "18:30",
+          status: "pendiente",
+          type: "baño",
+        },
+        {
+          id: 4,
+          date: "01/01/24",
+          time: "18:30",
+          status: "confirmado",
+          type: "corte y baño",
+        },
+        {
+          id: 1,
+          date: "01/08/25",
+          time: "18:30",
           status: "cancelado",
           type: "corte",
         },
@@ -37,6 +129,47 @@ const harcodedUser: IUser = {
       breed: "Caniche",
       age: 16,
       gender: "male",
+      birthdate: "01/08/24",
+      weight: 20,
+      medicalHistory: [
+        {
+          date: "01/09/24",
+          description: "Descripción de la consulta",
+          vet: "Veterinaria 1",
+        },
+      ],
+      hairCuts: [
+        {
+          date: "01/10/24",
+          description: "Descripción del corte",
+          groomer: "Groomer 1",
+        },
+        {
+          date: "01/11/24",
+          description: "Descripción del corte",
+          groomer: "Groomer 2",
+        },
+        {
+          date: "01/12/24",
+          description: "Descripción del corte",
+          groomer: "Groomer 1",
+        },
+        {
+          date: "01/01/25",
+          description: "Descripción del corte",
+          groomer: "Groomer 2",
+        },
+        {
+          date: "01/02/25",
+          description: "Descripción del corte",
+          groomer: "Groomer 1",
+        },
+        {
+          date: "01/03/25",
+          description: "Descripción del corte",
+          groomer: "Groomer 2",
+        },
+      ],
       image:
         "https://res.cloudinary.com/dxpxzcj2i/image/upload/v1740710816/Captura_de_pantalla_2025-02-27_234610_en8aoz.png",
       appointment: [
@@ -45,7 +178,7 @@ const harcodedUser: IUser = {
           date: "01/08/24",
           time: "18:30 pm",
           status: "cancelado",
-          type: "corte",
+          type: "peluqueria",
         },
       ],
       ownerId: 1,
@@ -68,6 +201,14 @@ export async function getPets() {
 }
 
 export async function loginUser(userData: IUserData) {
+  const users = localStorage.getItem("users")
+    ? JSON.parse(localStorage.getItem("users") as string)
+    : [];
+  console.log(users);
+
+  const user = users.find((user: IUser) => user.email === userData.email);
+  console.log(user);
+
   try {
     // const res = await fetch("http://localhost:3000/users/login", {
     //   method: "POST",
@@ -82,9 +223,15 @@ export async function loginUser(userData: IUserData) {
     //   const error = await res.json();
     //   throw new Error(error.error);
     // }
-    if (userData.username === "user" && userData.password === "@Pass123") {
+    if (
+      userData.email === harcodedUser.email &&
+      userData.password === harcodedUser.password
+    ) {
       return harcodedUser;
-    } else {
+    }
+    if (userData.email === user?.email && userData.password === user?.password)
+      return user;
+    else {
       throw new Error("Credenciales incorrectas");
     }
   } catch (error) {

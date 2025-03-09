@@ -1,7 +1,7 @@
 import { ICart, IFavorite, IProduct } from "./products";
 
 export interface IUserData {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -9,7 +9,7 @@ export interface IUser {
   id: number;
   name: string;
   email: string;
-  username: string;
+  password: string;
   pets: IUserPet[];
   image: string;
   favorites: IFavorite[];
@@ -33,6 +33,10 @@ export interface IUserPet {
   age: number;
   gender: string;
   image: string;
+  birthdate: string;
+  weight: number;
+  medicalHistory: { date: string; description: string; vet: string }[];
+  hairCuts: { date: string; description: string; groomer: string }[];
   appointment: IUserPetAppointment[];
   ownerId: number;
 }
@@ -43,4 +47,29 @@ export interface IUserPetAppointment {
   time: string;
   status: string;
   type: string;
+}
+
+export interface IUserInformation {
+  user: IUser;
+  setUser: (user: IUser) => void;
+}
+
+export interface IUserProfile {
+  user: IUser;
+  handleGetUser: () => void;
+}
+
+export interface IUserDataContainer {
+  user: IUser;
+  setUser: (user: IUser) => void;
+}
+
+export interface IPetData {
+  pet: IUserPet;
+  medicalHistory: { date: string; description: string; vet: string }[];
+  hairCuts: { date: string; description: string; groomer: string }[];
+}
+
+export interface IUserPetComponent {
+  // setSelectedPet: (pet: IUserPet) => void;
 }

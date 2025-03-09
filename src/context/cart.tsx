@@ -57,6 +57,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         console.log("agregando al carrito");
         
         const audio = new Audio('/dog-bark.mp3');
+        audio.volume = 0.6
         console.log("ladrido");
         
         await audio.play();

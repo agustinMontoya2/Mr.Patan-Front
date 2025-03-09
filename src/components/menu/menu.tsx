@@ -66,13 +66,13 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
             <div className="flex flex-col">
           {/* Servicios directos */}
           {services.map((service, index) => (
-            <a
+            <Link
               key={index}
               className="text-xl py-3 px-4 border-y border-gray-300 hover:bg-gray-200 transition-all duration-300 cursor-pointer"
-              onClick={() => router.push(`/productos/${service.title.toLowerCase()}`)}
+              href={`/productos/${service.title.toLowerCase()}`} passHref
             >
               {service.title}
-            </a>
+            </Link>
           ))}
           </div>
   
@@ -85,7 +85,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
               {
                 user?.image ? <Image src={user.image} alt="Perfil" className="w-10 h-10 rounded-full object-cover" width={40} height={40} /> : <Image src="/iconProfile.svg" alt="Perfil" className="w-10 h-10 rounded-full" width={40} height={40} />
               }
-              <span className="ml-2">{user?.username}</span>
+              <span className="ml-2">{user?.name}</span>
               <div className="ml-2">
                 {openProfileMenu ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
               </div>
@@ -96,7 +96,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
           {openProfileMenu && (
             <div className="mt-2">
               {profileOptions.map((option, index) => (
-                <Link
+                <Link passHref
                   href={option.link}
                   key={index}
                   className="pl-16 block text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
@@ -125,12 +125,12 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
                   {pets.map((pet, index) => (
                     <div key={index} className="flex items-center pl-16 gap-2 hover:bg-gray-100 transition-all duration-300">
                     <Image src={pet.image} alt="pet" width={40} height={40} className='rounded-full' style={{ width: "30px", height: "30px", objectFit: "cover" }}/>
-                    <a
+                    <Link href={`/perfil/mascota/${pet.id}`} passHref
                       key={index}
                       className="block py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
                       >
                       {pet.name}
-                    </a>
+                    </Link>
                         </div>
                   ))}
                   <div className="flex items-center justify-center hover:bg-gray-100">

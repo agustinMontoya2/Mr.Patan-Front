@@ -11,6 +11,7 @@ export default function useRedirect(key: string, redirectTo: string, needed: boo
         if (needed !== exist) {
             router.push(redirectTo);
         }
+        
         setValue(JSON.parse(storedValue as string));
     }, [router, key, redirectTo]);
     console.log(value);
