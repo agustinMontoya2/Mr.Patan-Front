@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 export const AddedToCart: React.FC<IAddedToCart> = ({menuOpen, setMenuOpen}) => {
     const router = useRouter();
     return (
+      <div>
         <div
           className={`fixed top-0 right-0 z-40 bg-white text-black w-[70%] max-w-[400px] h-screen flex flex-col items-center justify-center transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
@@ -26,6 +27,11 @@ export const AddedToCart: React.FC<IAddedToCart> = ({menuOpen, setMenuOpen}) => 
               Ir al carrito
             </button>
           </div>
+        </div>
+        {menuOpen && (
+        <div className="bg-black/50 fixed top-0 left-0 z-30 w-full h-screen">
+        </div>
+      )}
         </div>
       );
     };

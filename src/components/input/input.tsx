@@ -11,16 +11,46 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   value,
   onChange,
+  onChangeSelect,
   isPassword = false,
   error,
+  options
 }) => {
   const [seePassword, setSeePassword] = useState(false);
-
+  const today14 = new Date();
+  today14.setDate(today14.getDate() + 14);
+  const maxDate = today14.toISOString().split("T")[0];
   const togglePasswordVisibility = () => setSeePassword(!seePassword);
+  console.log(type);
   
-
   return (
     <div className="relative w-full">
+      {
+      type === "select" && options ? (
+        <select name= {name} id=""
+        onChange={onChangeSelect}
+        className="border border-gray-300 rounded-lg w-full p-3 pr-10"
+        value={value}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.value}
+            </option>
+          ))}
+        </select>
+      ) : type === "date" ? (
+        <input
+          id={name}
+          name={name}
+          type="date"
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          min={new Date().toISOString().split("T")[0]}
+          max={maxDate}
+          className="border border-gray-300 rounded-lg w-full p-2 pr-10"
+        />
+      ) : (
       <input
         id={name}
         name={name}
@@ -29,7 +59,7 @@ const Input: React.FC<InputProps> = ({
         value={value}
         onChange={onChange}
         className="border border-gray-300 rounded-lg w-full p-2 pr-10"
-      />
+      /> )}
       {isPassword && (
         <button
           type="button"

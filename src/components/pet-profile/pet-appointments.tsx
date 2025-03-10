@@ -1,9 +1,11 @@
 import { IUserPet, IUserPetAppointment } from "@/interfaces/user"
 import { Calendar, Clock, ScanHeart, Scissors, ShowerHead } from "lucide-react";
 import React, { useState } from "react"
+import { PetAppointmentForm } from "./pet-appointment-form";
 
 export const PetAppointments: React.FC <{pet: IUserPet}> = ({pet}) => {
     const [appointments, setAppointments] = useState<IUserPetAppointment[]>(pet.appointment);
+    const [addAppointment, setAddAppointment] = useState(false);
     const handleCancel = (appointment: IUserPetAppointment) => {
         appointment.status = "cancelado";
         const newAppointments = [...pet.appointment];
@@ -28,8 +30,9 @@ export const PetAppointments: React.FC <{pet: IUserPet}> = ({pet}) => {
     });
     console.log(sortedAppointments);
     
-    return <div className="w-full h-full">
-        <div className="w-full h-[90%] overflow-y-scroll flex flex-col gap-2">
+    return <div className="w-full h-full items-center flex flex-col justify-center">
+        <div className="w-full h-full flex flex-col">
+            <div className="h-[88%] overflow-y-scroll flex flex-col gap-2">
                         {sortedAppointmentsDate.map ((appointment, index) => (
                             <div key={index} className="flex flex-row items-center justify-center gap-2 font-kanit text-black text-sm">
                                 
@@ -64,6 +67,13 @@ export const PetAppointments: React.FC <{pet: IUserPet}> = ({pet}) => {
                                 </div>
                             </div>
                         ))}
+                        </div>
+                        <div className="h-[6%] w-full flex flex-row items-center justify-center">
+                        <button onClick={() => setAddAppointment(true)} className="h-8 flex flex-row items-center justify-center bg-blue-500 text-white font-kanit text-lg px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-500 transition-all duration-300 active:scale-95">
+                        Agendar turno
+                        </button>
+                        </div>
                     </div>
+                        {addAppointment &&  <PetAppointmentForm setAddAppointment={setAddAppointment} setAppointments={setAppointments} appointments={appointments} pet={pet}/>}
     </div>
 }

@@ -1,4 +1,5 @@
 import { IProduct } from "./products";
+import { IUserPet, IUserPetAppointment } from "./user";
 
 export interface IMenuItem {
   toggleMenu: () => void;
@@ -46,4 +47,11 @@ export interface ICartProduct {
 
 export interface ICartHeader {
   products: IProduct[];
+}
+
+export interface IPetAppointmentForm {
+  pet: IUserPet;
+  appointments: IUserPetAppointment[];
+  setAddAppointment: React.Dispatch<React.SetStateAction<boolean>>;
+  setAppointments: React.Dispatch<React.SetStateAction<IUserPetAppointment[]>>;
 }
