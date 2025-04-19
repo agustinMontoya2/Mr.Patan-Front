@@ -19,7 +19,7 @@ export const InputDate: React.FC<IInputDate> = ({setDate, min, max, sundayDisabl
       console.log(minDate.getDate());
       
     if(min === undefined) minDate.setFullYear(minDate.getFullYear() - 20)
-      
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const maxDate = new Date()
     if (max) maxDate.setDate(maxDate.getDate() + (max * 7))
     if (max === 0) maxDate.setDate(maxDate.getDate())
