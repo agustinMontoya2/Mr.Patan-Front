@@ -1,0 +1,426 @@
+{
+    "products": [
+    {
+      "id": "7cba8d64-2ff2-4a5a-a6b9-1f4e6e26a241",
+      "name": "Eukanuba Adulto Razas Medianas",
+      "category": "alimentos",
+      "subcategory": ["perros", "razas medianas", "adultos"],
+      "description": "Alimento seco premium para perros adultos de razas medianas",
+      "price": 8500,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/0Jmjy-Egtby0vEL0SmdXVeD_tHQUWeM77AuWZZNIF2Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYWNy/b3F1ZXRlcmlhZ2Rs/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNC8wMS9hZHVs/dC1tZWRpdW0tYnJl/ZWQuanBn"
+    },
+    {
+      "id": "b9429658-7eaf-41e1-b5cb-b3c4522c6a02",
+      "name": "Royal Canin Mini Puppy",
+      "category": "alimentos",
+      "subcategory": ["perros", "razas pequeñas", "cachorros"],
+      "description": "Alimento para cachorros de razas pequeñas",
+      "price": 9400,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/m7fZdNNHl4VMk0J2fxM8ndHVfuOYO5XGfTY3wusPipM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rYW5n/b29wZXRmb29kYXIu/dnRleGFzc2V0cy5j/b20vYXJxdWl2b3Mv/aWRzLzE1NTg1NS04/MDAtYXV0bz92PTYz/ODMxNzk4NDg1ODAz/MDAwMCZ3aWR0aD04/MDAmaGVpZ2h0PWF1/dG8mYXNwZWN0PXRy/dWU"
+    },
+    {
+      "id": "5e38e6b4-5d59-4fa1-b490-2eab8a25d95f",
+      "name": "Pro Plan Sensitive Skin",
+      "category": "alimentos",
+      "subcategory": ["perros", "piel sensible"],
+      "description": "Alimento especial para perros con piel sensible",
+      "price": 10200,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/5wNhdex0zhTVv1wAHkFe5N3Bf0f70v41D9iwe_e7R5k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXR5/Y2FuYXIudnRleGFz/c2V0cy5jb20vYXJx/dWl2b3MvaWRzLzE1/NTYzMy04MDAtYXV0/bz92PTYzNzczMjk2/NDk5NzYwMDAwMCZ3/aWR0aD04MDAmaGVp/Z2h0PWF1dG8mYXNw/ZWN0PXRydWU"
+    },
+    {
+      "id": "1a278c0a-594a-4c3a-bd12-21a84aef1f24",
+      "name": "Dog Chow Adultos Todos los Tamaños",
+      "category": "alimentos",
+      "subcategory": ["perros", "adultos"],
+      "description": "Alimento balanceado para perros adultos",
+      "price": 7000,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/axhZazLqNlu8JWK5fOzEIjBrAiXaIT8G8RBFveHV4Ug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wdXJp/bmEuY29tLmhuL3Np/dGVzL2RlZmF1bHQv/ZmlsZXMvMjAyMy0w/Mi9hZHVsdG9zLXRv/ZG9zLWxvcy10YW1h/biVDQyU4M29zLWNv/bnRyb2wtZGUtcGVz/by1mcm9udC5qcGc"
+    },
+    {
+      "id": "f3b68a88-05e2-4fdf-ae43-5f1e457321ff",
+      "name": "Pedigree Adulto Carne",
+      "category": "alimentos",
+      "subcategory": ["perros", "carne", "adultos"],
+      "description": "Alimento seco sabor carne para perros adultos",
+      "price": 6200,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/aBVZUrWJlnXqwFdBeLBPo_fZB4DGWniBxgMYWUxQk1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hY2Ru/LXVzLm1pdGllbmRh/bnViZS5jb20vc3Rv/cmVzLzQ4Mi84NzEv/cHJvZHVjdHMvZDFk/OWRhMzAtZjY0Yi00/NjljLWE2YzktNjNl/NTQzN2FmYjRkLTkw/MGZiMzVmZTJmZTJj/Nzk0OTE3MTAxODk2/MTk1NzcwLTI0MC0w/LmpwZw"
+    },
+  
+    {
+      "id": "ec1a8c50-bdb5-4564-ae40-9f6cf2282c84",
+      "name": "Whiskas Adulto Carne",
+      "category": "alimentos",
+      "subcategory": ["gatos", "adultos"],
+      "description": "Alimento seco sabor carne para gatos adultos",
+      "price": 5600,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/NbPwb-bxAsK-3C9k896fhUpWjW6fxC4TidSxJNnS4Xk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZXRz/Y2VudGVyLmNvbS5h/ci93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wOS9DYXQtQ2hv/dy1QZXNjYWRvLS0z/MDB4MzAwLnBuZw"
+    },
+    {
+      "id": "7a6b0ec9-71c0-4c95-86a5-f4a5f0c4db9f",
+      "name": "Royal Canin Kitten",
+      "category": "alimentos",
+      "subcategory": ["gatos", "cachorros"],
+      "description": "Alimento balanceado para gatitos en crecimiento",
+      "price": 9300,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/_gLpuBJqWqxKhN0kGmHwY8loSrhb7wn2S1MibKFvwt8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXR5/Y2FuYXIudnRleGFz/c2V0cy5jb20vYXJx/dWl2b3MvaWRzLzE1/ODY1MC04MDAtYXV0/bz92PTYzNzczMjk4/MjI3MzM3MDAwMCZ3/aWR0aD04MDAmaGVp/Z2h0PWF1dG8mYXNw/ZWN0PXRydWU"
+    },
+    {
+      "id": "1827d3e2-263c-4d64-aabb-f4f89fd5f3c7",
+      "name": "Pro Plan Gato Urinary",
+      "category": "alimentos",
+      "subcategory": ["gatos", "urinario"],
+      "description": "Alimento para gatos con problemas urinarios",
+      "price": 11000,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/5W9b9_JN3-178BsFSmqFtKMjLYmxAMZ3RYeh2PtuW7s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYWZh/cm1hc2NvdGEuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIw/LzA0L3Byb3BsYW4t/dXJpbmFyeS1nYXRv/LmpwZw"
+    },
+    {
+      "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2345",
+      "name": "Cat Chow Pescado",
+      "category": "alimentos",
+      "subcategory": ["gatos", "pescado"],
+      "description": "Alimento balanceado para gatos adultos sabor pescado",
+      "price": 5900,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/mvWzE-8hSSi5Xuaq0fhOCeVDGLAuHudWTH8xDtI11X8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFnazhzRm9LclMu/anBn"
+    },
+    {
+      "id": "65edcd6b-e854-4b52-a9e4-f2a54dc27d7e",
+      "name": "Sabrositos Gato Mix",
+      "category": "alimentos",
+      "subcategory": ["gatos", "adultos"],
+      "description": "Alimento económico para gatos adultos",
+      "price": 4200,
+      "quantity": 1,
+      "image": "https://imgs.search.brave.com/e7vJs_dzWNtHVuI-Tp0L3yY4faDxqw2FHIPtFchpA7o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWVu/ZGFkZW1hc2NvdGFz/YXIudnRleGFzc2V0/cy5jb20vYXJxdWl2/b3MvaWRzLzE1OTI0/MS04MDAtYXV0bz92/PTYzNzk0NzkyOTgw/NzM3MDAwMCZ3aWR0/aD04MDAmaGVpZ2h0/PWF1dG8mYXNwZWN0/PXRydWU"
+    },
+    {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2354",
+        "name": "Impermeable para mascotas pequeñas",
+        "category": "ropa",
+        "subcategory": ["gatos", "perros", "razas pequeñas", "lluvia"],
+        "description": "Poncho para proteger de la lluvia a los gatos.",
+        "price": 2300,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/cqvvvRqSD82qhfomdfnrUtR22hWPVr1-rHEu1zKQwO8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFWcFV3dXkza0wu/anBn"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2347",
+        "name": "Sweater navideño para gatos",
+        "category": "ropa",
+        "subcategory": ["gatos", "razas pequeñas"],
+        "description": "Sweater festivo para gatos pequeños.",
+        "price": 2200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/1nIzvlkyvOZ7Ye-urTlh3Bde9_O3SZFrHpQJzBcahtk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFSV3ZMeVg5a0wu/anBn"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2350",
+        "name": "Pijama para gato talla S",
+        "category": "ropa",
+        "subcategory": ["gatos", "razas pequeñas", "invierno"],
+        "description": "Pijama abrigada para gatos pequeños.",
+        "price": 2500,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/FsP14PRIq8TbkxfzDlRmRBj7_g2jztHaRoORDYAuqxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFPeEV3bGZUNUwu/anBn"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2351",
+        "name": "Chaleco de polar azul",
+        "category": "ropa",
+        "subcategory": ["perros", "invierno", "razas medianas"],
+        "description": "Chaleco de abrigo para perros medianos.",
+        "price": 3100,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/0_x3aYRNlw_mH-MtNQI7p_HJWHqNHDcaY8DKvxhGkdY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFkaWFlZnpUWEwu/anBn"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2353",
+        "name": "Camiseta Argentina para perro",
+        "category": "ropa",
+        "subcategory": ["perros", "fútbol", "razas medianas"],
+        "description": "Camiseta de Argentina para perros.",
+        "price": 2800,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/zXbG85YC6ElPdgpA1KorZ6xgD1ELsP7womffs8_udgQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXJnZW50aW5vdy5j/b20vaW1hZ2VuZXMv/YXJjaGl2b3MvMjAy/Mi0wOS8yMzM2LXIy/bl8xNjYzNTk2MTQ2/LmpwZw"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2355",
+        "name": "Camisa hawaiana para perros",
+        "category": "ropa",
+        "subcategory": ["perros", "verano", "razas medianas"],
+        "description": "Camisa estampada para días de calor.",
+        "price": 3200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/BuBQ3vZY4nXGu37BPmEnaXaIrLlm1rf0qobnomQpAD8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxU0owYkNjaDNM/LmpwZw"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2356",
+        "name": "Hueso de Cuero Masticable",
+        "category": "juguetes",
+        "subcategory": ["perros", "masticables"],
+        "description": "Hueso en forma de corbata ideal para que los perros mastiquen y se entretengan durante horas.",
+        "price": 1700,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/IHIRZ5zpIJVqFmwrz3xuBdO-uPNl70ibhPO48waUq7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sZW9j/YW4uY29tLmFyL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzAz/L0hVRVNPLTUtNi5q/cGc"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2357",
+        "name": "Pelota de Goma Reforzada",
+        "category": "juguetes",
+        "subcategory": ["perros", "arrojables"],
+        "description": "Pelota de goma resistente ideal para juegos de lanzar y recoger. Flota en el agua.",
+        "price": 4300,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/xWEWmIsrtk5e0eVvu3Nma57DcHpWxoSfyMI0_9f6pYc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/a2l3b2tvLmNvbS9k/dy9pbWFnZS92Mi9C/RExRX1BSRC9vbi9k/ZW1hbmR3YXJlLnN0/YXRpYy8tL1NpdGVz/LWtpd29rby1tYXN0/ZXItY2F0YWxvZy9k/ZWZhdWx0L2R3MmFm/Y2EwYzcvaW1hZ2Vz/L3BlbG90YV9wZXJy/b19rb25nX2JhbGxf/S09OSlUwMzA5Nl9N/LmpwZz9zdz0zODUm/c2g9Mzg1"
+      },
+      {
+        "id": "d27c9b9c-02ed-4fd7-93c7-c5d6b2dc2358",
+        "name": "Vara con Pluma Interactiva",
+        "category": "juguetes",
+        "subcategory": ["gatos"],
+        "description": "Vara con cuerda elástica y pluma para estimular el instinto cazador del gato.",
+        "price": 4800,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/8ONgFK-ympHSDHPB1Sfj5PIdujvUHA6Nxa-iT81aKxA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF0QzIxS21qQ0wu/anBn"
+      },
+      {
+        "id": "6f3283e2-7250-42a6-b963-fc9dce381032",
+        "name": "Ratón de Tela",
+        "category": "juguetes",
+        "subcategory": ["gatos"],
+        "description": "Ratón relleno con catnip para atraer y entretener a tu gato.",
+        "price": 4200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/LVplUdsYJT8sIGMhyTg9x_eeZk81-nPlPuvpkBzbsuw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFWMmhlVkJkY0wu/anBn"
+      },
+      {
+        "id": "09fa3c2a-d07a-4bc7-92dc-b103b9c9d891",
+        "name": "Pelota Sonajera Ligera",
+        "category": "juguetes",
+        "subcategory": ["gatos"],
+        "description": "Pelota con sonajero interior que estimula el juego y el movimiento.",
+        "price": 4000,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/GqZLeMV3jw77nryNoarcReOTVPt9qD4Qy6xSrzNAugU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJhbnpoYXVzbXgu/Y29tL2Nkbi9zaG9w/L3Byb2R1Y3RzLzYw/MDI1MDY0NmNlNWZk/MDQwN2FjODMyMTI1/ZjllMTMyXzQ0Nng0/MDcuMjE3MzkxMzA0/MzUuanBnP3Y9MTY3/MDk0NjMwNSZ3aWR0/aD0xNDQ1"
+      },
+      {
+        "id": "b4e30954-44c3-4ac7-a524-beb9a3ed084f",
+        "name": "Cuerda Nudos Extra Fuerte",
+        "category": "juguetes",
+        "subcategory": ["perros", "masticables"],
+        "description": "Cuerda con nudos resistentes para juegos de fuerza y mordida.",
+        "price": 3800,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/XJfcbCbzu61dGFg1db0nlLGXnmirA1HSRwaq0KJaJoI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS56b29wbHVzLmNv/bS9iaWxkZXIvOC80/MDAvNzk5Ml9wbGFf/dHJpeGllX3NwaWVs/dGF1X2dyYXVfaHM4/XzguanBn"
+      },
+      {
+        "id": "1a6ce5d4-9843-49f4-9d59-c7f7a667d49c",
+        "name": "Túnel para Gatos",
+        "category": "juguetes",
+        "subcategory": ["gatos"],
+        "description": "Túnel de tela plegable para que los gatos exploren, se escondan y jueguen.",
+        "price": 7200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/A3Jv5fVrLlTnLlLA1fKZUNahAPqsiVO6vEZYtW1Dsh4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8wZDJ1/anhqaXFreHcuY2Ru/LnNoaWZ0OHdlYi5j/b20vd3AtY29udGVu/dC91cGxvYWRzL0Rp/c2Vuby1zaW4tdGl0/dWxvLTM2LTUtNjgw/eDc4Ni5qcGc"
+      },
+      {
+        "id": "44d7aa4c-37d0-4b88-badb-9c576bc7cdb2",
+        "name": "Pelota Dispensador de Premios",
+        "category": "juguetes",
+        "subcategory": ["perros"],
+        "description": "Pelota interactiva que libera premios mientras el perro la mueve.",
+        "price": 5600,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/tjxTp5El3J75Nhtvpvb6x4bJUleNoLV8uZBDck1gVKE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFva0RiVFI3SUwu/anBn"
+      },
+      {
+        "id": "2e98df6e-0050-4869-8a8b-2d85810ed134",
+        "name": "Vara con Ratón Interactiva",
+        "category": "juguetes",
+        "subcategory": ["gatos"],
+        "description": "Caña flexible con ratón colgante para juegos interactivos con tu gato.",
+        "price": 4600,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/vmFeD9nRxDWee6rxa6Sb2apA7uWJYwReTPlk-RpcgGk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS56b29wbHVzLmNv/bS9iaWxkZXIvMS8z/MDAvMTQxOThfUExB/X0thcmxpZV9TcGll/bGFuZ2VsX1NvdW5k/bWF1c18xLmpwZw"
+      },
+      {
+        "id": "f7089f4e-e377-4c4d-b235-1d347a343d11",
+        "name": "Anillo de Goma Texturizada",
+        "category": "juguetes",
+        "subcategory": ["perros", "masticables"],
+        "description": "Anillo de goma con texturas que ayudan a limpiar los dientes mientras juegan.",
+        "price": 3400,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/HPnqFXbHmFly6YijW4h-g_qXDK-sByBoIlkI0ZKo8-c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjEzZFljTXRUUkwu/anBn"
+      },
+      {
+        "id": "f7089f4e-e377-4c4d-b235-1d347a343d12",
+        "name": "Rascador de Pared",
+        "category": "accesorios",
+        "subcategory": ["gatos"],
+        "description": "Rascador vertical con base de madera, ideal para fijar en paredes y proteger tus muebles mientras tu gato se entretiene.",
+        "price": 28900,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/NG4zR24aEnF4UKVM_DKG_xtv-H67Ukrp7qGWql9wkFs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzkxODY3MC1NTE03/NjYxNTYyNzg5NF8w/NjIwMjQtVi53ZWJw"
+      },
+      {
+        "id": "1e7d7f48-5d7f-4d86-8f30-11e915fbcb7e",
+        "name": "Cama Acolchada Circular",
+        "category": "accesorios",
+        "subcategory": ["perros", "gatos"],
+        "description": "Cama circular acolchada y suave, perfecta para el descanso de mascotas pequeñas y medianas.",
+        "price": 19800,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/ii12F00AU_AlDo5B3B7NyiB4XFN0TffRX4qwp5YywLM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF84NDU4MTEt/TUNPNTEyNjU1NDAz/MTJfMDgyMDIyLU8u/d2VicA"
+      },
+      {
+        "id": "c73fcb25-9fd2-4adf-877e-f09912a6fbc6",
+        "name": "Transportadora Plegable",
+        "category": "accesorios",
+        "subcategory": ["perros", "gatos"],
+        "description": "Transportadora plegable con ventilación lateral y manija reforzada para traslados cómodos y seguros.",
+        "price": 37400,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/U-5iI5lvqv-jScRji7ExKjKtLYhOU4L5gvjNtZPFyRM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFYa2ZqWjJvdEwu/anBn"
+      },
+      {
+        "id": "a2e4eb69-df58-42a9-94df-f730b3be826e",
+        "name": "Bebedero Antivuelco",
+        "category": "accesorios",
+        "subcategory": ["perros", "gatos"],
+        "description": "Bebedero plástico con diseño antivuelco que evita derrames durante el uso diario.",
+        "price": 5200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/ED37OkVKEmpt4w8vKOp1pi2LwnGx4QkzxI2_IfJCHHg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBV2RKYitIbEwu/anBn"
+      },
+      {
+        "id": "ff9c28ea-8e4a-4bb9-9022-197a2c902f73",
+        "name": "Collar Reflectante",
+        "category": "accesorios",
+        "subcategory": ["perros"],
+        "description": "Collar ajustable con material reflectante para mayor visibilidad en paseos nocturnos.",
+        "price": 3100,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/hHJJr7ouV5vrKyfOAkPYYsR5shnhRRl5mYE9S-3727A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zaG9w/LmxhbmRyb3Zlci5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlLzdjOGRm/NDVmYWUyZjQyNDYy/OGM0MDQxOGU2ZThh/YWRlL2IvNS9iNTRl/NzgzOTU1OWQzZTQ0/NDcwNjYwMzk3ZTZj/Zjk2OC5qcGc"
+      },
+      {
+        "id": "6a672bb0-36cf-4170-9360-cf5fd79b9645",
+        "name": "Arenero para Gatos",
+        "category": "accesorios",
+        "subcategory": ["gatos"],
+        "description": "Arenero cerrado con tapa superior y filtro de carbón para minimizar olores.",
+        "price": 26500,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/-vhdKiF0uOgj6gnAIa8f6wVUnitWuJp3JmiX2Yc3jL0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE3bDE0alJ3UEwu/anBn"
+      },
+      {
+        "id": "b5de6d89-2f2a-4ad3-9ac3-58dd9c6d0b5b",
+        "name": "Arnés Antitirones",
+        "category": "accesorios",
+        "subcategory": ["perros"],
+        "description": "Arnés ergonómico antitirones que distribuye la presión para paseos más cómodos y seguros.",
+        "price": 8700,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/rnCN4TSeVnuDc62DfenB1FOByE7J59Xq9zYgVqf0WYE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxVDBLVFVzbjRT/LmpwZw"
+      },
+      {
+        "id": "3cf04bb8-9c8e-4fcf-b0f3-bd087a6c88fa",
+        "name": "Fuente de Agua Automática",
+        "category": "accesorios",
+        "subcategory": ["perros", "gatos"],
+        "description": "Fuente automática que mantiene el agua en circulación constante para incentivar la hidratación.",
+        "price": 23100,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/-lmx15SrN-k3hG21BSr2vOtbQAdVclLUie8GB57gcPY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmViZWRlcm9zLXNo/b3AuY29tL21lZGlh/L2NhdGFsb2cvcHJv/ZHVjdC9jYWNoZS8x/L2ltYWdlLzlkZjc4/ZWFiMzM1MjVkMDhk/NmU1ZmI4ZDI3MTM2/ZTk1L2IvZS9iZWJl/ZGVyby1mdWVudGUt/cGFyYS1tYXNjb3Rh/cy5qcGc"
+      },
+      {
+        "id": "2f2c3bb4-0646-4c9f-aed1-0f11e514c750",
+        "name": "Cepillo Removedor de Pelo",
+        "category": "accesorios",
+        "subcategory": ["perros", "gatos"],
+        "description": "Cepillo con cerdas suaves que elimina el pelo suelto y reduce el desprendimiento.",
+        "price": 3600,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/Bm3HSsG4IYBlzkf3lIeVm67rd2FZDteYlpxfU188Ng0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL3ZhZGVyLXBy/b2QuczMuYW1hem9u/YXdzLmNvbS8xNjg5/ODUzMDg5LTcxbnNn/VHNSSUwuanBnP2Ny/b3A9MC45ODN4dzox/eGg7Y2VudGVyLHRv/cCZyZXNpemU9OTgw/Oio"
+      },
+      {
+        "id": "221dfc29-38ab-4d38-8bd0-541aa676a3f9",
+        "name": "Bravecto para Gatos",
+        "category": "farmacia",
+        "subcategory": ["gatos", "antipulgas"],
+        "description": "Tableta masticable Bravecto para gatos. Protege contra pulgas y garrapatas hasta por 12 semanas.",
+        "price": 37400,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/o1drPpzVYV47x2bSxQ6Xj3mMYpisyofA9tNwDyQJbUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rYW5n/b29wZXRmb29kYXIu/dnRleGFzc2V0cy5j/b20vYXJxdWl2b3Mv/aWRzLzE1NjkzMy04/MDAtYXV0bz92PTYz/ODM0NDA2MzA2NDk3/MDAwMCZ3aWR0aD04/MDAmaGVpZ2h0PWF1/dG8mYXNwZWN0PXRy/dWU"
+      },
+      {
+        "id": "bd5b14a6-1b9c-4df2-b84b-10f16c2a49cd",
+        "name": "Pipeta Frontline Plus Gatos",
+        "category": "farmacia",
+        "subcategory": ["gatos", "antipulgas"],
+        "description": "Pipeta antipulgas y garrapatas Frontline Plus para gatos. Aplicación mensual.",
+        "price": 18300,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/NrJbEaL7v6ExrvJmbAPH4ddekS1acwvce7qZ4uvDV-Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uYXR1/cmFsbGlmZS52dGV4/YXNzZXRzLmNvbS9h/cnF1aXZvcy9pZHMv/MTU1NTExLTMwMC0z/MDA_dj02Mzc3MzI5/NjQwMjY4NzAwMDAm/d2lkdGg9MzAwJmhl/aWdodD0zMDAmYXNw/ZWN0PXRydWU"
+      },
+      {
+        "id": "5cb8d4cc-b510-4e4b-a3f2-4ff631019319",
+        "name": "Collar Antipulgas Seresto Perros",
+        "category": "farmacia",
+        "subcategory": ["perros", "antipulgas"],
+        "description": "Collar Seresto para perros grandes. Protección prolongada contra pulgas y garrapatas.",
+        "price": 45200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/a5U3s4YY-fCtQtGgIvBOdMLR94T1T0V7WphuQg3Fjrs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGF0aWVuZGFkZWZy/aWRhLmNvbS9jZG4v/c2hvcC9wcm9kdWN0/cy9Db2xsYXItYW50/aXB1bGdhcy1wYXJh/LXBlcnJvcy1yYXph/cy1ncmFuZGVzLW1h/cmNhLVNlcmVzdG9C/QTAxMTMzLTFfYWNj/YTM4YWItZTY0MC00/MThkLWJkYjItM2Jh/OGRiNDEzNmJmXzEw/MDB4MTAwMC5qcGc_/dj0xNjE5MjM2MTgy"
+      },
+      {
+        "id": "a4cf313f-cd3c-4f1c-92e5-e77b48f5f4df",
+        "name": "Desparasitante Total Gatos",
+        "category": "farmacia",
+        "subcategory": ["gatos", "antiparasitarios"],
+        "description": "Solución oral de amplio espectro para desparasitación interna y externa en gatos.",
+        "price": 11200,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/LOu8kcivCp95gkbvKkQePu8L-XbKibZJs6S7K645Uwg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZXR6/ZXIubXgvY2RuL3No/b3AvcHJvZHVjdHMv/dzQ0MV9oNDQxX2F0/X18yMDE5MDMxNTE0/NDU0NnRmX2xjZ2F0/b3MuanBnP3Y9MTYx/NzIyNjc0MSZ3aWR0/aD0xNDQ1"
+      },
+      {
+        "id": "2d1f4f88-b274-4cb2-a5fa-67ebdb89d07f",
+        "name": "Gotas Oftálmicas para Mascotas",
+        "category": "farmacia",
+        "subcategory": ["perros", "gatos", "oftalmología"],
+        "description": "Solución oftálmica estéril para aliviar irritaciones oculares en mascotas.",
+        "price": 9100,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/EzCymMewQowZYaVYyZTm5E_UoIiTpOx1u3V5RE5hyfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxa1kxQ1hmSTRM/LmpwZw"
+      },
+      {
+        "id": "53c0f7e4-b689-43c1-9b6f-7e6f69426825",
+        "name": "Clindamicina",
+        "category": "farmacia",
+        "subcategory": ["perros", "gatos", "antibióticos"],
+        "description": "Antibiótico de amplio espectro en suspensión oral para infecciones bacterianas.",
+        "price": 23400,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/d-EioGAK-5rsJlPKTEJVIJ4rnj_zmxVsKmaYDh3LDzE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb2pp/dzJtOXR2djA5LmNs/b3VkZnJvbnQubmV0/LzIzMzg1L3Byb2R1/Y3QvTV9jbGluZGFi/b25lOTA3My5qcGc_/MTcxJnRpbWU9MTc0/MzAwNjg3MQ"
+      },
+      {
+        "id": "7c4517a9-157e-471e-9a00-3fe85866bd2f",
+        "name": "Vita-vet C",
+        "category": "farmacia",
+        "subcategory": ["gatos", "perros", "suplementos"],
+        "description": "Complejo vitamínico líquido que refuerza el sistema inmunológico y mejora el pelaje.",
+        "price": 6700,
+        "quantity": 1,
+        "image": "https://imgs.search.brave.com/LuaAyYNIuWP0ZYqYxaPkoLIJwS8TOmEwzA84q4yHSDk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWxv/cGV0YW5kZ2FyZGVu/LmNvbS9jZG4vc2hv/cC9maWxlcy9TdXBs/ZW1lbnRvVml0YW1p/bmljb1BhcmFNYXNj/b3Rhc1ZpdGFWZXQz/ME1sR290YXMuanBn/P3Y9MTcwMTExMTkz/NiZ3aWR0aD0xNDQ1"
+      }
+  ]
+}
+  

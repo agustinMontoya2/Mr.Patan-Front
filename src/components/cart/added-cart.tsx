@@ -2,11 +2,11 @@ import { IAddedToCart} from "@/interfaces/menu"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export const AddedToCart: React.FC<IAddedToCart> = ({menuOpen, setMenuOpen}) => {
+export const AddedToCart: React.FC<IAddedToCart> = ({addedRef, menuOpen, setMenuOpen}) => {
     const router = useRouter();
     return (
       <div>
-        <div
+        <div ref={addedRef}
           className={`fixed top-0 right-0 z-40 bg-white text-black w-[70%] max-w-[400px] h-screen flex flex-col items-center justify-center transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}

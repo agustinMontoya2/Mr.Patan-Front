@@ -7,6 +7,7 @@ export interface IMenuItem {
 }
 
 export interface IAddedToCart {
+  addedRef: React.RefObject<HTMLDivElement | null>;
   menuOpen: boolean;
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -26,6 +27,10 @@ export interface IFilters {
 }
 
 export interface IFiltersComponent {
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  filterFavorites: boolean;
+  setFilterFavorites: React.Dispatch<React.SetStateAction<boolean>>;
   toggleCategory: (category: string) => void;
   setPriceOrder: (order: string) => void;
   handleDeleteCategories: () => void;

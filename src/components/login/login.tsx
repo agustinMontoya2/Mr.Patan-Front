@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import {  useState } from "react";
 import Input from "../input/input";
 import { loginUser } from "@/helpers/users";
+import { notifyToast } from "@/helpers/notify/notifyToast";
 
 export const Login: React.FC = () => {
     const router = useRouter();
@@ -14,17 +15,15 @@ export const Login: React.FC = () => {
     }
     const handleSubmit = async () => {
         if (userData.email.length === 0 || userData.password.length === 0) {
-            alert("Los campos no pueden estar vacios");
+            notifyToast.alert("Los campos no pueden estar vacios");
             return;
         }
         try {
             const user = await loginUser(userData);
-            console.log(user);
             
             if (user) {
                 localStorage.setItem("user", JSON.stringify(user));
                 if (user.pets) {
-                    console.log(user.pets);
                     
                     localStorage.setItem("pets", JSON.stringify(user.pets))
                 } else {
@@ -46,13 +45,14 @@ export const Login: React.FC = () => {
                     localStorage.setItem("orders", JSON.stringify([]))
                 }
                 window.dispatchEvent(new Event("userSessionUpdated"));
-                alert("Bienvenido");
-                router.push("/perfil");
-            } else {
-                throw new Error("Error al iniciar sesión");
-            }
-        } catch (error) {
-            alert(error);
+                notifyToast.success(`¡Bienvenido nuevamente ${user.name}!`);
+                const lastPage = localStorage.getItem("lastPage");
+                const audio = new Audio('/door-chime.mp3');
+                await audio.play();
+                router.push(lastPage ? lastPage : "/perfil");
+            } 
+        } catch (error: any) {
+            notifyToast.error("Error desconocido al iniciar sesión");
         }
         
         

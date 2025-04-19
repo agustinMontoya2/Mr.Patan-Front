@@ -4,6 +4,7 @@ import { IUserPet, IUserPetAppointment } from "@/interfaces/user"
 import { X } from "lucide-react"
 import { useState } from "react";
 import { InputDate } from "../input/input-date";
+import { notifyToast } from "@/helpers/notify/notifyToast";
 
 export const PetAppointmentForm: React.FC<IPetAppointmentForm> = ({appointments , pet,setAddAppointment, setAppointments}) => {
     const visualizerAppointment: IUserPetAppointment = {
@@ -29,7 +30,7 @@ export const PetAppointmentForm: React.FC<IPetAppointmentForm> = ({appointments 
 
     const handleSubmit = () => {
       if (appointmentData.date === "" || appointmentData.time === "" || appointmentData.type === "") {
-        alert("Todos los campos son obligatorios");
+        notifyToast.alert("Todos los campos son obligatorios");
         return;
       }
       const newAppointment = { ...appointmentData, id: Math.floor(Math.random() * 1000), status: "pendiente" };
@@ -44,14 +45,14 @@ export const PetAppointmentForm: React.FC<IPetAppointmentForm> = ({appointments 
     
     return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-      <div className="relative bg-white p-6 rounded-lg shadow-lg w-3/4 h-3/4">
+      <div className="relative bg-white p-6 rounded-lg shadow-lg w-3/4 h-3/4 min-w-[275px]">
         <X onClick={() => setAddAppointment(false)} size={32}
         className="absolute top-2 right-5 cursor-pointer text-gray-700 hover:text-gray-900 transition"/>
 
         <div className="h-full flex flex-col justify-between text-black">
           
           <label className="block text-2xl font-kanit">Fecha</label>
-          <InputDate setDate={handleChangeDate} />
+          <InputDate setDate={handleChangeDate} max={3} min={0} sundayDisabled={true} />
           
           <label className="block text-2xl font-kanit">Hora</label>
           <select

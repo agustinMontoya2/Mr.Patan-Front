@@ -1,4 +1,5 @@
 "use client";
+import { notifyToast } from '@/helpers/notify/notifyToast';
 import { IUser, IUserInformation } from '@/interfaces/user';
 import { SquarePen } from 'lucide-react';
 import React, {  useState } from 'react'
@@ -9,8 +10,6 @@ export const UserInformation: React.FC<IUserInformation> = ({ user, setUser }) =
     
 
     const handleEditField = (field: "name" | "email") => {
-        console.log("proceso 0?");
-        
         setEditingField(field);
         setTempValue(user ? user[field] : "");
     };
@@ -20,13 +19,13 @@ export const UserInformation: React.FC<IUserInformation> = ({ user, setUser }) =
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (editingField === "email" && !emailRegex.test(tempValue)) {
             setEditingField(null);
-            alert("Correo invalido");
+            notifyToast.error("Correo invalido");
             return;
         }
         const users = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users") as string) : []
         if (users.find((user: IUser) => user.email === tempValue)) {
             setEditingField(null);
-            alert("El correo ya esta registrado");
+            notifyToast.alert("El correo ya esta registrado");
             return;
         }
         

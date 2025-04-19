@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import registerValidation from "../../helpers/validate";
 import { FormErrors } from "@/interfaces/errors";
 import { IUser } from "@/interfaces/user";
+import { notifyToast } from "@/helpers/notify/notifyToast";
 
 export const Register = () => {
     const router = useRouter();
@@ -28,24 +29,23 @@ export const Register = () => {
     setErrors(validationErrors);
     
     };
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const validationErrors = registerValidation(userData);
         setErrors(validationErrors);
         if (Object.keys(validationErrors).length > 0) {
-            console.log(validationErrors);
-            alert("Completa los campos correctamente");
+            notifyToast.alert("Completa los campos correctamente");
             return;
         }
         if (Object.keys(validationErrors).length === 0 && userData.password === userData.confirmPassword) {
-            alert("Registrado con exito");
+            
             const users = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users") as string) : []
             if (users.find((user: IUser) => user.email === userData.email)) {
-                alert("El correo ya esta registrado");
+                notifyToast.error("El correo ya esta registrado");
                 return;
             }
-            
+            notifyToast.success("¡Bienvenido a Mr.Patan!");
             const user: IUser = {
-                id: 1,
+                id: Math.floor(Math.random() * 1000),
                 name: userData.name,
                 email: userData.email,
                 password: userData.password,
@@ -62,6 +62,8 @@ export const Register = () => {
             localStorage.setItem("favorites", JSON.stringify([]));
             localStorage.setItem("cart", JSON.stringify([]));
             localStorage.setItem("orders", JSON.stringify([]));
+            const audio = new Audio('/door-chime.mp3');
+            await audio.play();
             router.push("/perfil");
             return
         }
@@ -76,7 +78,7 @@ export const Register = () => {
          }
          }
          className="w-full h-5/6 flex flex-col items-center justify-around">
-        <div className="flex flex-col items-center justify-around w-[80%] h-/6 font-kanit">
+        <div className="flex flex-col items-center justify-around w-[80%] font-kanit">
             {
                 inputs.map(({ name, type, placeholder, isPassword }) => (
                     <div key={name} className="w-full">

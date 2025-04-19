@@ -18,7 +18,7 @@ export const OrderComponent: React.FC<IOrderComponent> = ({order}) => {
                 </div>
                 <div className="flex flex-row items-center justify-end h-16 gap-4 font-poppins">
                     <div className="flex flex-col ssm:flex-row items-center gap-1 ssm:gap-4">
-                    <div className={`w-28 h-8 rounded-md flex flex-row items-center justify-center ${order.status === "pendiente" ? `bg-yellow-400/70` : order.status === "recibido" ? `bg-green-400/70` : `bg-red-400/70`}`}>
+                    <div className={`w-28 h-8 rounded-md flex flex-row items-center justify-center ${order.status === "pendiente" ? `bg-yellow-400/70` : order.status === "recibido" ? `bg-green-400/70` : `bg-red-500/90`}`}>
                         <p>{order.status}</p>
                     </div>
                         <p className="font-semibold w-[60px] text-center">${order.total}</p>

@@ -3,6 +3,27 @@ import { Calendar, Weight } from "lucide-react"
 import Image from "next/image"
 
 export const PetData: React.FC<IPetData> = ({pet, medicalHistory, hairCuts}) => {
+    const now = new Date()
+    const birthdateDate = pet.birthdate.split("/")
+    const birthdate = new Date(Number(birthdateDate[2]) , Number(birthdateDate[1]) - 1, Number(birthdateDate[0]))
+
+    let year = now.getFullYear() - birthdate.getFullYear()
+    let month = now.getMonth() - birthdate.getMonth()
+    let day = now.getDate() - birthdate.getDate()
+    
+    if (day < 0) {
+        month--;
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        day += lastMonth.getDate();
+      }
+      
+      // Si el mes es negativo, restamos un año y sumamos 12 meses
+      if (month < 0) {
+        year--;
+        month += 12;
+    }
+    
+    
     return (
         <div className="flex flex-col w-full h-full gap-4">
                     <div className="w-full h-[25%] flex flex-row items-center gap-4 border-b border-solid border-[rgb(0,0,0)]">
@@ -14,7 +35,7 @@ export const PetData: React.FC<IPetData> = ({pet, medicalHistory, hairCuts}) => 
                                     <p className=''>{pet.breed}</p>
                                 </div>
                                 <div className="min-w-[50px]">
-                                    <p className='text-center'>{pet.age} años</p>
+                                    <p className='text-center'>{year <= 0 ? `${month < 0 ? month * -1 : month} meses` : year <= 1 ? `${year} año` : `${year} años`}</p>
                                 </div>
                                 <div className="min-w-[50px]">
                                     {pet.gender === "female" ? <p className='text-center'>Hembra</p> : <p className="text-center">Macho</p>}

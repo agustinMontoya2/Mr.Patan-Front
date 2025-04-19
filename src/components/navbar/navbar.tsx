@@ -48,7 +48,7 @@ export const Navbar: React.FC<INavbar> = () => {
     }, [toggleMenu]);
     
     return (
-        <div className="w-screen min-h-[68px] h-20 max-h-[68px] bg-[#7600F5] flex flex-row items-center justify-between px-4">
+        <div className=" w-screen min-h-[68px] h-20 max-h-[68px] bg-[#7600F5] flex flex-row items-center justify-between px-4">
             <Link
             href="/perfil"
             passHref

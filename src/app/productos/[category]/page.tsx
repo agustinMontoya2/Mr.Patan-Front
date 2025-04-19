@@ -1,6 +1,6 @@
 "use client"
 import useRedirect from '@/customHooks/useRedirect';
-import ProducView from '@/views/productsView/products-view'
+import ProductView from '@/views/productsView/products-view'
 import { useParams } from 'next/navigation';
 import React from 'react'
 
@@ -11,7 +11,7 @@ import React from 'react'
 
     return (
       <div>
-        { category ? <ProducView category={category} /> : <h1>404</h1> }
+        { category ? <ProductView category={category} /> : <h1>404</h1> }
       </div>
     )
 

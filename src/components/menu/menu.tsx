@@ -1,3 +1,4 @@
+import { notifyToast } from "@/helpers/notify/notifyToast";
 import { IMenuBurguerItem, IMenuItem } from "@/interfaces/menu"
 import { IUser, IUserPet } from "@/interfaces/user";
 import { ChevronDown, ChevronUp, Plus, X } from "lucide-react"
@@ -23,7 +24,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
 
     const profileOptions = [
         { title: "Mi perfil", link: "/perfil"},
-        { title: "Mis favoritos", link: "/perfil/favoritos"},
+        // { title: "Mis favoritos", link: "/perfil/favoritos"},
         {title: "Mi carrito", link: "/perfil/carrito"},
         {title: "Mis ordenes", link: "/perfil/ordenes"},
     ]
@@ -42,12 +43,27 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
         setOpenPetsMenu(!openPetsMenu);
       };
 
-    const logout = () => {
+    const logout = async () => {
+      const users: IUser[] = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users") as string) : [];
+      const user: IUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null;
+      const pets = localStorage.getItem("pets") ? JSON.parse(localStorage.getItem("pets") as string) : [];
+      const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart") as string) : [];
+      const favorites = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites") as string) : [];
+      const orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders") as string) : [];
+      user.pets = pets;
+      user.cart = cart;
+      user.favorites = favorites;
+      user.orders = orders;
+      users.find((u: IUser) => u.id === user.id) !== undefined ? users[users.findIndex((u: IUser) => u.id === user.id)] = user : users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("lastPage", window.location.pathname);
         localStorage.removeItem("user");
         localStorage.removeItem("pets");
         localStorage.removeItem("cart");
         localStorage.removeItem("favorites");
         localStorage.removeItem("orders");
+        const audio = new Audio('/door-chime.mp3');
+        await audio.play();
         router.push("/inicio");
     }
     
@@ -120,7 +136,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
   
               {/* Lista de mascotas desplegable */}
               {openPetsMenu && (
-                <div className="mt-2 text-lg border-gray-300">
+                <div className="mt-2 text-lg border-gray-300 max-h-[200px] overflow-y-scroll">
                     
                   {pets.map((pet, index) => (
                     <div key={index} className="flex items-center pl-16 gap-2 hover:bg-gray-100 transition-all duration-300">
@@ -134,14 +150,14 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
                         </div>
                   ))}
                   <div className="flex items-center justify-center hover:bg-gray-100">
-                      <a className="flex items-center gap-2 underline transition-all duration-300 cursor-pointer">
+                      <Link href="/registro/mascota" className="flex items-center gap-2 underline transition-all duration-300 cursor-pointer">
                         <Plus size={20} /> Agregar mascotas
-                      </a>
+                      </Link>
                   </div>
                   
                 </div>
               )}
-              <a onClick={() => logout()} className="border-t border-gray-300 flex items-center justify-center text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
+              <a onClick={() => notifyToast.confirmButton(()=> logout(), "¿Desea cerrar la sesion?")} className="border-t border-gray-300 flex items-center justify-center text-lg py-2 hover:bg-gray-100 rounded-md transition-all duration-300"
                 >Cerrar sesion
                 </a>
             </div>

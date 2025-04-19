@@ -30,7 +30,6 @@ export interface IUserPet {
   name: string;
   type: string;
   breed: string;
-  age: number;
   gender: string;
   image: string;
   birthdate: string;

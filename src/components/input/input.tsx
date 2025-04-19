@@ -21,7 +21,6 @@ const Input: React.FC<InputProps> = ({
   today14.setDate(today14.getDate() + 14);
   const maxDate = today14.toISOString().split("T")[0];
   const togglePasswordVisibility = () => setSeePassword(!seePassword);
-  console.log(type);
   
   return (
     <div className="relative w-full">
@@ -29,7 +28,7 @@ const Input: React.FC<InputProps> = ({
       type === "select" && options ? (
         <select name= {name} id=""
         onChange={onChangeSelect}
-        className="border border-gray-300 rounded-lg w-full p-3 pr-10"
+        className="border border-gray-300 rounded-lg w-full p-2 pr-10"
         value={value}
         >
           {options.map((option) => (
@@ -38,18 +37,20 @@ const Input: React.FC<InputProps> = ({
             </option>
           ))}
         </select>
-      ) : type === "date" ? (
+      ) : type === "number" ? (
         <input
           id={name}
           name={name}
-          type="date"
+          type="number"
+          
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          min={new Date().toISOString().split("T")[0]}
-          max={maxDate}
+          min={0}
+          max={100}
+          step={.1}
           className="border border-gray-300 rounded-lg w-full p-2 pr-10"
-        />
+        /> 
       ) : (
       <input
         id={name}

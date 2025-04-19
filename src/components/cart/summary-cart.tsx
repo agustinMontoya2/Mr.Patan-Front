@@ -1,5 +1,6 @@
 "use client";
 import { CartContext } from "@/context/cart";
+import { notifyToast } from "@/helpers/notify/notifyToast";
 import { IOrder } from "@/interfaces/user";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect } from "react";
@@ -16,7 +17,7 @@ export const SummaryCart = () => {
     const handleCreateOrder = () => {
         if (cart.length === 0) 
         {
-            alert('El carrito esta vacio')
+            notifyToast.error("El carrito no puede estar vacio")
             return
         }
         const orders = localStorage.getItem('orders') ? JSON.parse(localStorage.getItem('orders') as string) : []

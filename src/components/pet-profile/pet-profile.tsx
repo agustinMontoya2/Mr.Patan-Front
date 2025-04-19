@@ -2,12 +2,13 @@
 import { IUserPet } from "@/interfaces/user";
 import { ArrowLeft} from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PetData } from "./pet-data";
 import { PetAppointments } from "./pet-appointments";
 
 export const PetProfile = () => {
+    const router = useRouter();
     const [pet, setPet] = useState<IUserPet | null>(null);
     const [medicalHistory, setMedicalHistory] = useState<{ date: string; description: string; vet: string }[]>([]);
     const [hairCuts, setHairCuts] = useState<{ date: string; description: string; groomer: string }[]>([]);
@@ -40,13 +41,13 @@ export const PetProfile = () => {
     return (
     <div className="h-[80%] min-w-[310px] w-[90%] bg-whiteTransparent border-2 border-solid border-[rgb(0,0,0)] rounded-2xl flex flex-row items-center justify-center">
         <div className="w-full h-full px-6">
-            <div className="w-full h-[6%] flex flex-row items-center gap-2 border-b border-solid border-[rgb(0,0,0)]">
+            <div className="w-full h-[6%] flex flex-row items-center justify-between gap-2 border-b border-solid border-[rgb(0,0,0)]">
+                <div className="w-[50%] h-full flex flex-row items-center ssm:gap-2">
                 <button className="flex flex-row items-center gap-2 h-[90%]
                 rounded-xl hover:bg-gray-100 active:bg-gray-300 
-                transition-all duration-200 active:scale-95 p-2 text-xs text-black">
-                    <Link href="/perfil" className="flex flex-row items-center gap-2">
+                transition-all duration-200 active:scale-95 p-2 text-xs text-black"
+                onClick={() => router.back()}>
                 <ArrowLeft size={20} />
-                </Link>
                 </button>
                 {tabs.map((tab) => (
                 <button key={tab.key} onClick={() => setSelectedTab(tab.key)}
@@ -56,10 +57,24 @@ export const PetProfile = () => {
                     {tab.label}
                 </button>
                 ))}
+                </div>
+                <Link href={`${id}/modificar`} className="h-full flex flex-row items-center">
+                    <button
+                className={`flex flex-row items-center justify-center gap-2 h-[80%] min-w-[75px] w-[10%]
+                    rounded-md hover:bg-gray-100 active:bg-gray-300 
+                    transition-all duration-200 active:scale-95 p-2 text-xs text-black bg-gray-100/90`}
+                >
+                    Modificar
+                </button>
+                </Link >
+                
             </div>
         {pet && selectedTab === "data" && <PetData pet={pet} medicalHistory={medicalHistory} hairCuts={hairCuts}/>}
         {pet && selectedTab === "appointments" && <PetAppointments pet = {pet} />}
-        {!pet && <div>Cargando...</div>}
+        {!pet && 
+        <div className="w-full h-full flex flex-row items-center justify-center">
+            <h1 className="text-3xl font-kanit text-black font-bold">Mascota no encontrada</h1>
+        </div>}
         </div>
     </div>)
 }

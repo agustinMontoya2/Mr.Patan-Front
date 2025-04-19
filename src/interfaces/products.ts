@@ -33,6 +33,7 @@ export interface ICart {
 }
 
 export interface ICards {
+  background?: string;
   products: IProduct[];
 }
 
