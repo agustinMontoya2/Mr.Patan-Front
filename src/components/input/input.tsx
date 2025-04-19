@@ -19,7 +19,6 @@ const Input: React.FC<InputProps> = ({
   const [seePassword, setSeePassword] = useState(false);
   const today14 = new Date();
   today14.setDate(today14.getDate() + 14);
-  const maxDate = today14.toISOString().split("T")[0];
   const togglePasswordVisibility = () => setSeePassword(!seePassword);
   
   return (
