@@ -15,7 +15,7 @@ export const PetModifyForm = () => {
 
     const pets: IUserPet[] = localStorage.getItem("pets") ? JSON.parse(localStorage.getItem("pets") as string) : [];
     let pet = pets.find((pet: IUserPet) => pet.id === parseInt(petId as string));
-    const user = useRedirect("user", "/inicio", true);
+    useRedirect("user", "/inicio", true);
     const petBirthdate = pet? pet.birthdate.split("/").reverse() : [];
     const petDate =new Date(petBirthdate[0] as unknown as number, petBirthdate[1] as unknown as number - 1, petBirthdate[2] as unknown as number);
     

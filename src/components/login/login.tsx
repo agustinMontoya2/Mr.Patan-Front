@@ -51,7 +51,8 @@ export const Login: React.FC = () => {
                 await audio.play();
                 router.push(lastPage ? lastPage : "/perfil");
             } 
-        } catch (error: any) {
+        } catch (error) {
+            console.log(error);
             notifyToast.error("Error desconocido al iniciar sesión");
         }
         

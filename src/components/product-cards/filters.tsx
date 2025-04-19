@@ -8,7 +8,6 @@ export const Filters: React.FC<IFiltersComponent> = ({
     filterFavorites,
     setFilterFavorites,
     setPriceOrder,
-    handleDeleteCategories,
     searchTerm,
     setSearchTerm,
     subCategories,

@@ -13,12 +13,11 @@ export const InputDate: React.FC<IInputDate> = ({setDate, min, max, sundayDisabl
     
     const [selectedDate, setSelectedDate] = useState(placeholder ? placeholder : new Date())
 
-    const today = new Date()
-
     const minDate = new Date()
     if (min) minDate.setDate(minDate.getDate() - (min * 7))
-    if (min === 0) minDate.setDate(minDate.getDate())
-      //mucho tirmpo minimo
+    if (min === 0) minDate.setDate(minDate.getDate() - 1)
+      console.log(minDate.getDate());
+      
     if(min === undefined) minDate.setFullYear(minDate.getFullYear() - 20)
       
     const maxDate = new Date()
