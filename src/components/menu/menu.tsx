@@ -54,6 +54,7 @@ export const MenuBurger: React.FC<IMenuItem> = ({menuOpen, toggleMenu}) => {
       user.cart = cart;
       user.favorites = favorites;
       user.orders = orders;
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       users.find((u: IUser) => u.id === user.id) !== undefined ? users[users.findIndex((u: IUser) => u.id === user.id)] = user : users.push(user);
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("lastPage", window.location.pathname);

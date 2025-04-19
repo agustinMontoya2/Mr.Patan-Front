@@ -52,6 +52,7 @@ export const PetModifyForm = () => {
     };
       try {
         pet = { ...pet, ...petData };
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         pets.find((pet: IUserPet) => pet.id === parseInt(petId as string)) !== undefined ? pets[pets.findIndex((pet: IUserPet) => pet.id === parseInt(petId as string))] = pet : pets.push(pet);
         localStorage.setItem("pets", JSON.stringify(pets));
       const sound = new Audio("/dog-toy.mp3");
